@@ -82,7 +82,7 @@ class CheckOut extends React.Component {
             Đơn hàng của bạn sẽ không được vận chuyển cho tới khi tiền được gửi
             vào tài khoản của chúng tôi.
           </p>
-          <table class='table'>
+          <table className='table'>
             <thead>
               <tr className='row'>
                 <th className='col-md-1'>STT</th>

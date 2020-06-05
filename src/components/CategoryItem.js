@@ -3,6 +3,11 @@ class CategoryItem extends React.Component {
   showLogin = () => {
     document.getElementById('loginForm').style.display = 'block';
   };
+  logOut = () => {
+    document.getElementById('cart').style.display = 'none';
+    document.getElementById('login').style.display = 'block';
+    document.getElementById('logout').style.display = 'none';
+  };
   showCart = () => {
     const { CartActionToCate, userId } = this.props;
     CartActionToCate.getCartAction(userId);
@@ -20,7 +25,7 @@ class CategoryItem extends React.Component {
           </li>
         ))}
         <li className=' nav-item' onClick={this.showLogin}>
-          <a className='nav-link itemCategory' href='#'>
+          <a className='nav-link itemCategory' href='#' id='login'>
             Đăng ký/Đăng nhập
           </a>
         </li>
@@ -32,6 +37,11 @@ class CategoryItem extends React.Component {
             id='cart'
           >
             <span className='spanCart'>Giỏ hàng</span>
+          </a>
+        </li>
+        <li className=' nav-item' onClick={this.logOut}>
+          <a className='nav-link itemCategory' id='logout' href='#'>
+            Log Out
           </a>
         </li>
       </ul>

@@ -1,18 +1,19 @@
 import React from 'react';
+import CartItem from './CartItem';
 
-function format2(n) {
-  return n.toFixed(1).replace(/(\d)(?=(\d{3})+\.)/g, '$1.');
-}
+// function format2(n) {
+//   return n.toFixed(1).replace(/(\d)(?=(\d{3})+\.)/g, '$1.');
+// }
 class Cart extends React.Component {
+  closeDetail = () => {
+    document.getElementById('cartApp').style.display = 'none';
+  };
   showCheckOut = () => {
     document.getElementById('divCheckOut').style.display = 'block';
     document.getElementById('cartApp').style.display = 'none';
   };
-  closeDetail = () => {
-    document.getElementById('cartApp').style.display = 'none';
-  };
   render() {
-    const { listCart } = this.props;
+    const { listCart, CartActionUpdate } = this.props;
     let tongAll = 0;
     return (
       <div className='divCart' id='cartApp'>
@@ -46,36 +47,25 @@ class Cart extends React.Component {
               <th>Tên Sản phẩm</th>
               <th>Số lượng</th>
               <th>Tổng giá</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
             {listCart.map((ele, key) => {
               tongAll = tongAll + ele.tong;
               return (
-                <tr key={key}>
-                  <td>
-                    <img
-                      src={ele.product_img}
-                      alt='ok'
-                      width='100px'
-                      height='100px'
-                    />
-                  </td>
-                  <td>{ele.product_name}</td>
-                  <td>{ele.soluong}</td>
-                  <td>
-                    {ele.tong.toLocaleString('it-IT', {
-                      style: 'currency',
-                      currency: 'VND',
-                    })}
-                  </td>
-                </tr>
+                <CartItem
+                  {...ele}
+                  key={key}
+                  tongAll={tongAll}
+                  CartActionUpdate={CartActionUpdate}
+                />
               );
             })}
           </tbody>
           <tfoot>
             <tr>
-              <td colspan='3'>
+              <td colSpan='3'>
                 Tổng đơn hàng:{' '}
                 {tongAll.toLocaleString('it-IT', {
                   style: 'currency',
@@ -83,7 +73,7 @@ class Cart extends React.Component {
                 })}
               </td>
               <td
-                colspan='1'
+                colSpan='1'
                 style={{ display: listCart.length > 0 ? 'flex' : 'none' }}
               >
                 <button onClick={this.showCheckOut}>Thanh Toán</button>
@@ -91,7 +81,6 @@ class Cart extends React.Component {
             </tr>
           </tfoot>
         </table>
-        {listCart.map((ele, key) => {})}
       </div>
     );
   }

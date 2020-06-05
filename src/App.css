@@ -214,6 +214,18 @@
   display: none;
   cursor: pointer;
 }
+#logout {
+  display: none;
+  cursor: pointer;
+}
+.btnEdit {
+  padding: 1%;
+  color: #1e73be;
+}
+.btnDelete {
+  padding: 1%;
+  color: red;
+}
 body {
   font-family: Arial, Helvetica, sans-serif;
 }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 class LoginRegister extends React.Component {
   constructor(props) {
     super(props);
@@ -8,23 +8,22 @@ class LoginRegister extends React.Component {
 
   handleSubmit = (eve) => {
     eve.preventDefault();
-    const { LoginAction } = this.props
-    console.log(this.user.current.value)
+    const { LoginAction } = this.props;
+    console.log(this.user.current.value);
     LoginAction.loginAction(this.user.current.value, this.pass.current.value);
-    document.getElementById("loginForm").style.display = "none";
-
-  }
+    document.getElementById('loginForm').style.display = 'none';
+    document.getElementById('login').style.display = 'none';
+    document.getElementById('logout').style.display = 'block';
+  };
   render() {
-
     return (
-      <div id="loginForm" >
-
-        <div className="container">
-          <h2 style={{ textAlign: "center" }}>Register or Login</h2>
-          <form action="/#" onSubmit={this.handleSubmit} method="post">
-            <div className="row">
-              <div className="vl">
-                <span className="vl-innertext">or</span>
+      <div id='loginForm'>
+        <div className='container'>
+          <h2 style={{ textAlign: 'center' }}>Register or Login</h2>
+          <form action='/#' onSubmit={this.handleSubmit} method='post'>
+            <div className='row'>
+              <div className='vl'>
+                <span className='vl-innertext'>or</span>
               </div>
               {/* <div className="col">
                 <div className="hide-md-lg">
@@ -47,32 +46,46 @@ class LoginRegister extends React.Component {
               </a>
             </div> */}
 
-              <div className="col">
-                <div className="hide-md-lg">
+              <div className='col'>
+                <div className='hide-md-lg'>
                   <p>Or sign in manually:</p>
                 </div>
-                <input type="text" name="uid" placeholder="Username" ref={this.user} required />
-                <input type="password" name="pwd" placeholder="Password" ref={this.pass} required />
-                <input type="submit" value="Login" />
+                <input
+                  type='text'
+                  name='uid'
+                  placeholder='Username'
+                  ref={this.user}
+                  required
+                />
+                <input
+                  type='password'
+                  name='pwd'
+                  placeholder='Password'
+                  ref={this.pass}
+                  required
+                />
+                <input type='submit' value='Login' />
               </div>
-
             </div>
           </form>
         </div>
 
-        <div className="bottom-container">
-          <div className="row">
-            <div className="col">
-              <a href="#" style={{ color: "white" }} className="btn">Điều khoản dịch vụ</a>
+        <div className='bottom-container'>
+          <div className='row'>
+            <div className='col'>
+              <a href='#' style={{ color: 'white' }} className='btn'>
+                Điều khoản dịch vụ
+              </a>
             </div>
-            <div className="col">
-              <a href="#" style={{ color: "white" }} className="btn">Forgot password?</a>
+            <div className='col'>
+              <a href='#' style={{ color: 'white' }} className='btn'>
+                Forgot password?
+              </a>
             </div>
           </div>
         </div>
-
-      </div >
-    )
+      </div>
+    );
   }
 }
-export default LoginRegister
+export default LoginRegister;
