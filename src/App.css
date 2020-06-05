@@ -1,0 +1,343 @@
+.App {
+  /* text-align: center; */
+}
+.Home {
+  position: relative;
+}
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.cart {
+}
+.spanCart {
+  color: #fff;
+}
+.cart :hover .spanCart {
+  color: #808080;
+}
+.divCart {
+  padding: 1%;
+  position: absolute;
+  top: 12%;
+  right: 0px;
+  z-index: 4;
+  opacity: 0.9;
+  background-color: #fff;
+  border: 2px #1e73be solid;
+}
+.divBanner {
+  margin-top: 2%;
+}
+.divSearch {
+  padding: 2%;
+}
+.inputSearch {
+  border-radius: 5px;
+  padding-left: 5px;
+  overflow: hidden;
+}
+.divCategory {
+  padding: 0.5%;
+  background-color: #3f51b5;
+  display: flex;
+  justify-content: center;
+}
+.itemCategory:hover {
+  color: gray;
+  background-color: oldlace;
+}
+.divListProducts {
+  margin-top: 2%;
+  position: relative;
+}
+.divProduct {
+  margin-left: 2%;
+}
+.divProduct :hover {
+  text-decoration: none;
+}
+.divProduct :hover .imgProduct {
+  transform: translateX(5px);
+}
+.pProduct {
+  color: darkslategray;
+  font-weight: bold;
+}
+
+.itemCategory {
+  margin-left: 10px;
+  margin-top: 10px;
+  color: white;
+  font-weight: bolder;
+  font-size: large;
+}
+.leftDetail {
+  border: 0.5px #dddddd solid;
+}
+.rightDetail {
+  padding-left: 5%;
+}
+.divDetail {
+  padding: 5%;
+  color: black;
+  border: 1px gray solid;
+  position: absolute;
+  width: 1000px;
+  top: 10%;
+  left: 50%;
+  z-index: 5;
+  background-color: whitesmoke;
+  opacity: 0.85;
+}
+.chooseTaste,
+.chooseGift {
+  color: #e35627;
+  text-transform: uppercase;
+}
+
+.itemTaste {
+  padding: 2%;
+  border: 0.5px #dddddd solid;
+}
+.itemTaste {
+  padding: 2%;
+  border: 0.5px #dddddd solid;
+}
+.itemTaste :hover {
+  border: 1px #e35627 solid;
+}
+.itemGift :hover {
+  border-color: #e35627;
+}
+.itemGift {
+  padding: 2%;
+  border: 0.5px #dddddd solid;
+}
+.descDetail {
+  padding: 5px;
+  border: 0.5px #dddddd solid;
+}
+.dauX {
+  color: red;
+}
+.detailName {
+  display: flex;
+  font-size: large;
+  font-weight: bolder;
+}
+.detailSalePrice {
+  text-align: left;
+  font-size: large;
+  font-weight: bolder;
+}
+.divFooter {
+  text-align: center;
+  padding-top: 2%;
+  padding-bottom: 1%;
+  background-color: #446084;
+  color: wheat;
+}
+.divCart {
+  display: none;
+}
+
+/* Login Form */
+#loginForm {
+  border: 2px #1e73be solid;
+  display: none;
+  position: absolute;
+  top: 12%;
+  left: 0px;
+  max-width: 500px;
+}
+#divCheckOut {
+  padding: 2%;
+  display: none;
+  position: absolute;
+  top: 12%;
+  right: 0px;
+  z-index: 6;
+  max-width: 600px;
+  border: 2px #1e73be solid;
+  background-color: white;
+  flex-wrap: wrap;
+}
+.divTbCO {
+  text-align: center;
+  background-color: #ccffff;
+}
+
+.pHeaderCO {
+  font-size: 1.2em;
+  overflow: hidden;
+  padding-top: 10px;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+.tbCheckOut {
+  width: 100%;
+  margin-bottom: 1em;
+  border-spacing: 0;
+}
+#cart {
+  display: none;
+  cursor: pointer;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* style the container */
+.container {
+  position: relative;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px 0 30px 0;
+}
+
+/* style inputs and link buttons */
+input,
+.btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  margin: 5px 0;
+  opacity: 0.85;
+  display: inline-block;
+  font-size: 17px;
+  line-height: 20px;
+  text-decoration: none; /* remove underline from anchors */
+}
+
+input:hover,
+.btn:hover {
+  opacity: 1;
+}
+
+/* add appropriate colors to fb, twitter and google buttons */
+.fb {
+  background-color: #3b5998;
+  color: white;
+}
+
+.twitter {
+  background-color: #55acee;
+  color: white;
+}
+
+.google {
+  background-color: #dd4b39;
+  color: white;
+}
+
+/* style the submit button */
+input[type='submit'] {
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+}
+
+input[type='submit']:hover {
+  background-color: #45a049;
+}
+
+/* Two-column layout */
+.col {
+  float: left;
+  width: 50%;
+  margin: auto;
+  padding: 0 50px;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/* vertical line */
+.vl {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  border: 2px solid #ddd;
+  height: 175px;
+}
+
+/* text inside the vertical line */
+.vl-innertext {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  padding: 8px 10px;
+}
+
+/* hide some text on medium and large screens */
+.hide-md-lg {
+  display: none;
+}
+
+/* bottom container */
+.bottom-container {
+  text-align: center;
+  background-color: #666;
+  border-radius: 0px 0px 4px 4px;
+}
+
+/* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 650px) {
+  .col {
+    width: 100%;
+    margin-top: 0;
+  }
+  /* hide the vertical line */
+  .vl {
+    display: none;
+  }
+  /* show the hidden text on small screens */
+  .hide-md-lg {
+    display: block;
+    text-align: center;
+  }
+}
