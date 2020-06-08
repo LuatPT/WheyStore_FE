@@ -12,18 +12,18 @@ class CartItem extends React.Component {
       soluong: eve.target.value,
     });
   };
-  addSoLuong = () => {
-    this.setState({
-      soluong: this.state.soluong++,
-    });
-    console.log(this.state.soluong);
-  };
-  minusSoLuong = () => {
-    this.setState({
-      soluong: this.state.soluong--,
-    });
-    console.log(this.state.soluong);
-  };
+  // addSoLuong = () => {
+  //   this.setState({
+  //     soluong: this.state.soluong++,
+  //   });
+  //   console.log(this.state.soluong);
+  // };
+  // minusSoLuong = () => {
+  //   this.setState({
+  //     soluong: this.state.soluong--,
+  //   });
+  //   console.log(this.state.soluong);
+  // };
 
   updateCart = (ele) => {
     const obj = {

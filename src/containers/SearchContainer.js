@@ -1,10 +1,12 @@
-import { connect } from "react-redux"
-import Search from "../components/Search"
+import { connect } from 'react-redux';
+import * as SearchActions from '../actions/searchAction';
+import { bindActionCreators } from 'redux';
+import Search from '../components/Search';
 
-const mapStateToProps = state => ({
-  keyWord: state.cateReducer
-})
-const mapDispatchToProp = dispatch => ({
-
-})
-export default connect(null, null)(Search)
+const mapStateToProps = (state) => ({
+  keySearch: state.searchReducer,
+});
+const mapDispatchToProp = (dispatch) => ({
+  SearchActions: bindActionCreators(SearchActions, dispatch),
+});
+export default connect(mapStateToProps, mapDispatchToProp)(Search);
