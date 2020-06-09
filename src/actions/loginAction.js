@@ -11,15 +11,12 @@ export const loginAction = (user, pass) => {
       },
       data: { uid: user, pwd: pass },
     })
-      // axios
-      //   .post('http://localhost:3002/login/', { uid: user, pwd: pass })
       .then((res) => {
-        dispatch(login(res.data));
-      })
-      .then((data) => {
-        if (data.message) {
+        if (!res.data.message) {
         } else {
-          localStorage.setItem('token', data.jwt);
+          localStorage.setItem('token', res.data.jwt);
+          console.log(localStorage.getItem('token'));
+          dispatch(login(res.data));
         }
       })
       .catch((err) => console.log(err));

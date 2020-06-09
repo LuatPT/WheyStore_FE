@@ -4,7 +4,9 @@ class CategoryItem extends React.Component {
     document.getElementById('loginForm').style.display = 'block';
   };
   logOut = () => {
-    document.getElementById('cart').style.display = 'none';
+    const { Logout } = this.props;
+    Logout.logoutAction();
+    // document.getElementById('cart').style.display = 'none';
     document.getElementById('login').style.display = 'block';
     document.getElementById('logout').style.display = 'none';
   };
@@ -33,7 +35,7 @@ class CategoryItem extends React.Component {
           <a
             className='nav-link itemCategory cart'
             onClick={this.showCart}
-            style={{ display: isDisplayCart ? 'block' : 'none' }}
+            // style={{ display: isDisplayCart ? 'block' : 'none' }}
             id='cart'
           >
             <span className='spanCart'>Giỏ hàng</span>

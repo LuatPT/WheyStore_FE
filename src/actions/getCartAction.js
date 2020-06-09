@@ -1,10 +1,18 @@
 import axios from 'axios';
 export const getCartAction = (obj) => {
   //keyword, category_ids, page
-  console.log(obj);
   return (dispatch) => {
-    axios
-      .get('http://localhost:3002/cart/' + obj.userId)
+    axios({
+      method: 'get',
+      url: 'http://localhost:3002/cart/' + obj.userId,
+      headers: {
+        'access-token': localStorage.getItem('token'),
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+    })
+      // axios
+      //   .get('http://localhost:3002/cart/' + obj.userId)
       .then((res) => {
         dispatch(getCart(res.data));
       })
