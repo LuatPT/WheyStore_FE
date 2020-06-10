@@ -11,22 +11,34 @@ class CategoryItem extends React.Component {
     document.getElementById('logout').style.display = 'none';
   };
   showCart = () => {
-    const { CartActionToCate, userId } = this.props;
-    CartActionToCate.getCartAction(userId);
+    const { CartActionToCate } = this.props;
+
+    CartActionToCate.getCartAction({ userId: localStorage.getItem('userId') });
     document.getElementById('cartApp').style.display = 'block';
   };
   render() {
-    const { listCate, isDisplayCart } = this.props;
+    const { listCate, isDisplayCart, getProductbyCategory } = this.props;
+    let userId = localStorage.getItem('userId');
     return (
       <ul className='nav nav-pills'>
         {listCate.map((ele, key) => (
-          <li className=' nav-item' key={key}>
-            <a className='nav-link itemCategory' href='xem.vn'>
+          <li
+            className=' nav-item'
+            key={key}
+            onClick={() =>
+              getProductbyCategory.getProductbyCate(ele.category_id)
+            }
+          >
+            <a className='nav-link itemCategory' href='#'>
               <span key={key}>{ele.category_name}</span>
             </a>
           </li>
         ))}
-        <li className=' nav-item' onClick={this.showLogin}>
+        <li
+          className=' nav-item'
+          onClick={this.showLogin}
+          style={{ display: userId == null ? 'block' : 'none' }}
+        >
           <a className='nav-link itemCategory' href='#' id='login'>
             Đăng ký/Đăng nhập
           </a>
@@ -35,13 +47,17 @@ class CategoryItem extends React.Component {
           <a
             className='nav-link itemCategory cart'
             onClick={this.showCart}
-            // style={{ display: isDisplayCart ? 'block' : 'none' }}
+            style={{ display: userId == null ? 'none' : 'block' }}
             id='cart'
           >
             <span className='spanCart'>Giỏ hàng</span>
           </a>
         </li>
-        <li className=' nav-item' onClick={this.logOut}>
+        <li
+          className=' nav-item'
+          onClick={this.logOut}
+          style={{ display: userId == null ? 'none' : 'block' }}
+        >
           <a className='nav-link itemCategory' id='logout' href='#'>
             Log Out
           </a>

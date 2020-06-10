@@ -15,6 +15,7 @@ export const loginAction = (user, pass) => {
         if (!res.data.message) {
         } else {
           localStorage.setItem('token', res.data.jwt);
+          localStorage.setItem('userId', res.data.userId);
           console.log(localStorage.getItem('token'));
           dispatch(login(res.data));
         }

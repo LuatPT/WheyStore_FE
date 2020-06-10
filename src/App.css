@@ -215,7 +215,7 @@
   cursor: pointer;
 }
 #logout {
-  display: none;
+  /* display: none; */
   cursor: pointer;
 }
 .btnEdit {

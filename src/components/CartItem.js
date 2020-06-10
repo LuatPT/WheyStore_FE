@@ -24,7 +24,6 @@ class CartItem extends React.Component {
   //   });
   //   console.log(this.state.soluong);
   // };
-
   updateCart = (ele) => {
     const obj = {
       cart_id: ele.cart_id,
@@ -37,7 +36,6 @@ class CartItem extends React.Component {
   };
   render() {
     const ele = this.props;
-    let { tongAll } = this.props;
     return (
       <tr>
         <td>
