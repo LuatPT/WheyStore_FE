@@ -1,17 +1,13 @@
 import axios from 'axios';
+import * as constants from '../constants/index';
 export const updateToCart = (obj) => {
   //keyword, category_ids, page
   return (dispatch) => {
-    axios({
-      method: 'put',
-      url: 'http://localhost:3002/carts/' + obj.cart_id,
-      obj,
-      headers: {
-        'access-token': localStorage.getItem('token'),
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-    })
+    console.log(obj);
+    axios
+      .put(constants.api + '/carts/' + obj.cart_id, obj, {
+        headers: { 'access-token': localStorage.getItem('token') },
+      })
       // axios
       //   .put('http://localhost:3002/carts/' + obj.cart_id, obj)
       .then((res) => {

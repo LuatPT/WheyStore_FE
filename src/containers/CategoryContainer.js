@@ -8,7 +8,7 @@ import { bindActionCreators } from 'redux';
 const mapStateToProps = (state) => ({
   listCate: state.listCateReducer,
   isDisplayCart: state.loginReducer.message,
-  userId: state.loginReducer,
+  userId: localStorage.getItem('userId'),
 });
 const mapDispatchToProp = (dispatch) => ({
   CartActionToCate: bindActionCreators(CartActionToCate, dispatch),

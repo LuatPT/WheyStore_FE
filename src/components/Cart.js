@@ -1,9 +1,6 @@
 import React from 'react';
 import CartItem from './CartItem';
 
-// function format2(n) {
-//   return n.toFixed(1).replace(/(\d)(?=(\d{3})+\.)/g, '$1.');
-// }
 class Cart extends React.Component {
   closeDetail = () => {
     document.getElementById('cartApp').style.display = 'none';

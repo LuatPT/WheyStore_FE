@@ -7,23 +7,18 @@ class CartItem extends React.Component {
       soluong: ele.soluong,
     };
   }
-  changeSoluong = (eve) => {
+  addSoLuong = () => {
     this.setState({
-      soluong: eve.target.value,
+      soluong: Number(this.state.soluong) + 1,
     });
+    console.log(this.state.soluong);
   };
-  // addSoLuong = () => {
-  //   this.setState({
-  //     soluong: this.state.soluong++,
-  //   });
-  //   console.log(this.state.soluong);
-  // };
-  // minusSoLuong = () => {
-  //   this.setState({
-  //     soluong: this.state.soluong--,
-  //   });
-  //   console.log(this.state.soluong);
-  // };
+  minusSoLuong = () => {
+    this.setState({
+      soluong: Number(this.state.soluong) - 1,
+    });
+    console.log(this.state.soluong);
+  };
   updateCart = (ele) => {
     const obj = {
       cart_id: ele.cart_id,
@@ -43,25 +38,23 @@ class CartItem extends React.Component {
         </td>
         <td>{ele.product_name}</td>
         <td>
-          {/* <input
-            type='button'
-            value='-'
-            className='btnMinus col-md-5'
+          <button
+            className='btnMinus col-md-4'
             onClick={() => this.minusSoLuong()}
-          /> */}
-          <input
-            type='text'
-            defaultValue={this.state.soluong}
-            className='btnSoLuong'
-            onChange={this.changeSoluong}
-          />
+          >
+            -
+          </button>
+          <span type='text' className='btnSoLuong '>
+            {this.state.soluong}
+          </span>
 
-          {/* <input
+          <button
             type='button'
-            value='+'
-            className='btnAdd col-md-5'
+            className='btnAdd col-md-4'
             onClick={() => this.addSoLuong()}
-          /> */}
+          >
+            +
+          </button>
         </td>
         <td>
           {ele.tong.toLocaleString('it-IT', {

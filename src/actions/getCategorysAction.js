@@ -1,14 +1,17 @@
 import axios from 'axios';
-export const getCategorysAction = () => {//keyword, category_ids, page
-  return dispatch => {
-    axios.get("http://localhost:3002/categorys")
-      .then(res => {
-        dispatch(getCategory(res.data))
+import * as constants from '../constants/index';
+export const getCategorysAction = () => {
+  //keyword, category_ids, page
+  return (dispatch) => {
+    axios
+      .get(constants.api + '/categorys')
+      .then((res) => {
+        dispatch(getCategory(res.data));
       })
-      .catch(err => console.log(err))
-  }
-}
-const getCategory = listCategory => ({
+      .catch((err) => console.log(err));
+  };
+};
+const getCategory = (listCategory) => ({
   type: 'GET_CATEGORY',
-  listCategory
-})
+  listCategory,
+});

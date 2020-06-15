@@ -1,14 +1,19 @@
 import axios from 'axios';
-export const addToCart = (cartItem) => {//keyword, category_ids, page
-  return dispatch => {
-    axios.post('http://localhost:3002/carts/', cartItem)
-      .then(res => {
-        dispatch(addCart(res.data))
+import * as constants from '../constants/index';
+export const addToCart = (cartItem) => {
+  //keyword, category_ids, page
+  return (dispatch) => {
+    axios
+      .post(constants.api + '/carts', cartItem, {
+        headers: { 'access-token': localStorage.getItem('token') },
       })
-      .catch(err => console.log(err))
-  }
-}
-const addCart = message => ({
+      .then((res) => {
+        dispatch(addCart(res.data));
+      })
+      .catch((err) => console.log(err));
+  };
+};
+const addCart = (message) => ({
   type: 'ADD_CART',
-  message
-})
+  message,
+});

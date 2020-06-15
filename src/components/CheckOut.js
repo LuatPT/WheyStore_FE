@@ -1,6 +1,19 @@
 import React from 'react';
 class CheckOut extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: '',
+    };
+  }
+  changeInput = (eve) => {
+    this.setState({
+      email: eve.target.value,
+    });
+  };
   closeDetail = () => {
+    const { sendMailActions } = this.props;
+    sendMailActions.sendMailAction(this.state.email);
     document.getElementById('divCheckOut').style.display = 'none';
   };
   render() {
@@ -72,6 +85,13 @@ class CheckOut extends React.Component {
                 </tr>
               </tfoot>
             </table>
+          </div>
+          <div>
+            <input
+              type='text'
+              onChange={() => this.changeInput()}
+              placeholder='Nhập địa chỉ email của bạn để tiếp tục'
+            />
           </div>
           <div>
             <p>

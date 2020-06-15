@@ -5,16 +5,43 @@ class DetailProduct extends React.Component {
     super(props);
     this.soLuong = React.createRef();
   }
-
+  // componentDidUpdate = () => {
+  //   const { DetailAction2 } = this.props;
+  //   const ele = this.props;
+  //   DetailAction2.checkExistProduct({ productId: ele.product_id });
+  // };
   addNewItem = () => {
     const ele = this.props;
-    const { DetailAction, userId, closeDetail } = this.props;
+    const {
+      DetailAction1,
+      DetailAction2,
+      DetailAction3,
+      userId,
+      closeDetail,
+      cart,
+    } = this.props;
     var item = {
       user_id: userId,
       product_id: ele.product_id,
       soluong: this.soLuong.current.value,
     };
-    DetailAction.addToCart(item);
+    DetailAction2.checkExistProduct({ productId: ele.product_id });
+    if (!cart) {
+      console.log('111');
+      DetailAction1.addToCart(item);
+    }
+    console.log('222');
+    console.log(cart);
+    // let soluongEnd = Number(this.soLuong.current.value) + Number(cart.soluong);
+    // console.log(soluongEnd);
+
+    // DetailAction3.updateToCart({
+    //   cart_id: cart.cart_id,
+    //   user_id: userId,
+    //   product_id: ele.product_id,
+    //   soLuong: soluongEnd,
+    // });
+
     closeDetail();
   };
   render() {

@@ -1,6 +1,3 @@
-.App {
-  /* text-align: center; */
-}
 .Home {
   position: relative;
 }
@@ -37,8 +34,6 @@
   to {
     transform: rotate(360deg);
   }
-}
-.cart {
 }
 .spanCart {
   color: #fff;
@@ -171,7 +166,16 @@
 .divCart {
   display: none;
 }
-
+.btnMinus,
+.btnAdd,
+.btnSoLuong {
+  border: 0.5px #ddd solid;
+  background-color: white;
+}
+.btnSoLuong {
+  padding: 4%;
+  font-size: medium;
+}
 /* Login Form */
 #loginForm {
   border: 2px #1e73be solid;

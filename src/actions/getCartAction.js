@@ -1,10 +1,11 @@
 import axios from 'axios';
+import * as constants from '../constants/index';
 export const getCartAction = (obj) => {
   //keyword, category_ids, page
   return (dispatch) => {
     axios({
       method: 'get',
-      url: 'http://localhost:3002/cart/' + obj.userId,
+      url: constants.api + '/cart/' + obj.userId,
       headers: {
         'access-token': localStorage.getItem('token'),
         'Content-Type': 'application/json',

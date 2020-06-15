@@ -1,9 +1,10 @@
 import axios from 'axios';
+import * as constants from '../constants/index';
 export const getProductbyCate = (category_ids) => {
   //keyword, category_ids, page
   return (dispatch) => {
     axios
-      .get('http://localhost:3002/categorys/' + category_ids)
+      .get(constants.api + '/categorys/' + category_ids)
       .then((res) => {
         dispatch(getList(res.data));
       })

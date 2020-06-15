@@ -7,6 +7,7 @@ import loginReducer from './loginReducer';
 import addCartReducer from './addCartReducer';
 import getListCart from './getListCart';
 import searchReducer from './searchReducer';
+import checkExist from './checkExist';
 export default combineReducers({
   cateReducer,
   productReducer,
@@ -16,4 +17,5 @@ export default combineReducers({
   addCartReducer,
   getListCart,
   searchReducer,
+  checkExist,
 });

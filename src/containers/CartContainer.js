@@ -4,7 +4,7 @@ import * as CartActionUpdate from '../actions/updateToCart';
 import { bindActionCreators } from 'redux';
 import Cart from '../components/Cart';
 const mapStateToProps = (state) => ({
-  userId: state.loginReducer.userId,
+  userId: localStorage.getItem('userId'),
   listCart: state.getListCart,
 });
 const mapDispatchToProp = (dispatch) => ({

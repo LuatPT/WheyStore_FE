@@ -1,10 +1,11 @@
 import axios from 'axios';
+import * as constants from '../constants/index';
 export const loginAction = (user, pass) => {
   //keyword, category_ids, page
   return (dispatch) => {
     axios({
       method: 'post',
-      url: 'http://localhost:3002/login/',
+      url: constants.api + '/login',
       headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json',
@@ -16,7 +17,6 @@ export const loginAction = (user, pass) => {
         } else {
           localStorage.setItem('token', res.data.jwt);
           localStorage.setItem('userId', res.data.userId);
-          console.log(localStorage.getItem('token'));
           dispatch(login(res.data));
         }
       })
