@@ -21,7 +21,7 @@ class Product extends React.Component {
         <img
           className='card-img-top imgProduct'
           src={ele.product_img}
-          alt='Card image'
+          alt='Ok'
         />
         <div className='card-body'>
           <p className='pProduct'>{ele.product_name}</p>

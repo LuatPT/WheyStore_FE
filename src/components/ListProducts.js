@@ -1,6 +1,5 @@
 import React from 'react';
 import ProductsContainer from '../containers/ProductsContainer';
-import DetailProduct from './DetailProduct';
 class ListProducts extends React.Component {
   componentDidMount = () => {
     const { ListProductActions } = this.props;
@@ -12,7 +11,6 @@ class ListProducts extends React.Component {
       (ele) =>
         ele.product_name.toLowerCase().includes(keyWord.toLowerCase()) === true
     );
-    // console.log(keyWord);
     return (
       <div className='divListProducts row'>
         {arr.map((ele, key) => (

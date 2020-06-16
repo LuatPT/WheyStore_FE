@@ -73,12 +73,20 @@ class LoginRegister extends React.Component {
         <div className='bottom-container'>
           <div className='row'>
             <div className='col'>
-              <a href='#' style={{ color: 'white' }} className='btn'>
+              <a
+                href='google.com.vn'
+                style={{ color: 'white' }}
+                className='btn'
+              >
                 Điều khoản dịch vụ
               </a>
             </div>
             <div className='col'>
-              <a href='#' style={{ color: 'white' }} className='btn'>
+              <a
+                href='google.com.vn'
+                style={{ color: 'white' }}
+                className='btn'
+              >
                 Forgot password?
               </a>
             </div>

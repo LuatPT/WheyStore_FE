@@ -17,7 +17,7 @@ class CategoryItem extends React.Component {
     document.getElementById('cartApp').style.display = 'block';
   };
   render() {
-    const { listCate, isDisplayCart, getProductbyCategory } = this.props;
+    const { listCate, getProductbyCategory } = this.props;
     let userId = localStorage.getItem('userId');
     return (
       <ul className='nav nav-pills'>

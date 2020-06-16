@@ -10,28 +10,38 @@ class DetailProduct extends React.Component {
   //   const ele = this.props;
   //   DetailAction2.checkExistProduct({ productId: ele.product_id });
   // };
+  addOrUpdate = () => {
+    const { cart } = this.props;
+    if (cart) {
+      console.log(cart);
+    } else {
+      console.log('nguuu');
+    }
+  };
   addNewItem = () => {
     const ele = this.props;
-    const {
-      DetailAction1,
-      DetailAction2,
-      DetailAction3,
-      userId,
-      closeDetail,
-      cart,
-    } = this.props;
+    // console.log(ele);
+    const { DetailAction, add, cart, userId, closeDetail } = this.props;
+    // console.log(cart);
+
     var item = {
       user_id: userId,
       product_id: ele.product_id,
       soluong: this.soLuong.current.value,
     };
-    DetailAction2.checkExistProduct({ productId: ele.product_id });
-    if (!cart) {
-      console.log('111');
-      DetailAction1.addToCart(item);
-    }
-    console.log('222');
-    console.log(cart);
+    DetailAction.checkExistProduct(item);
+    setTimeout(() => {
+      this.addOrUpdate();
+    }, 1000);
+    // this.addOrUpdate();
+    // if (!cart) {
+    //   console.log('111');
+    //   DetailAction.addToCart(item);
+    // } else {
+    //   console.log('222');
+    //   console.log(cart);
+    // }
+
     // let soluongEnd = Number(this.soLuong.current.value) + Number(cart.soluong);
     // console.log(soluongEnd);
 

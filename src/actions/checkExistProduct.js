@@ -4,13 +4,12 @@ export const checkExistProduct = (obj) => {
   return (dispatch) => {
     axios({
       method: 'get',
-      url: constants.api + '/cartss/' + obj.productId,
+      url: constants.api + '/cartss/' + obj.product_id,
       headers: {
         'access-token': localStorage.getItem('token'),
       },
     })
       .then((res) => {
-        // console.log(res);
         dispatch(checkExist(res.data));
       })
       .catch((err) => console.log(err));

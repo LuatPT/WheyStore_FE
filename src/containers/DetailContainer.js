@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 import DetailProduct from '../components/DetailProduct';
-import * as DetailAction1 from '../actions/addToCart';
-import * as DetailAction2 from '../actions/checkExistProduct';
-import * as DetailAction3 from '../actions/updateToCart';
+import * as DetailAction from '../actions/checkExistProduct';
+import * as add from '../actions/addToCart';
+import * as update from '../actions/updateToCart';
 import { bindActionCreators } from 'redux';
 const mapStateToProps = (state) => {
   // console.log(state.checkExist);
@@ -12,8 +12,8 @@ const mapStateToProps = (state) => {
   };
 };
 const mapDispatchToProp = (dispatch) => ({
-  DetailAction1: bindActionCreators(DetailAction1, dispatch),
-  DetailAction2: bindActionCreators(DetailAction2, dispatch),
-  DetailAction3: bindActionCreators(DetailAction3, dispatch),
+  DetailAction: bindActionCreators(DetailAction, dispatch),
+  add: bindActionCreators(add, dispatch),
+  update: bindActionCreators(update, dispatch),
 });
 export default connect(mapStateToProps, mapDispatchToProp)(DetailProduct);
