@@ -12,10 +12,7 @@ export const getCartAction = (obj) => {
         Accept: 'application/json',
       },
     })
-      // axios
-      //   .get('http://localhost:3002/cart/' + obj.userId)
       .then((res) => {
-        console.log(res);
         dispatch(getCart(res.data));
       })
       .catch((err) => console.log(err));

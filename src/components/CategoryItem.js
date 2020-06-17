@@ -6,7 +6,6 @@ class CategoryItem extends React.Component {
   logOut = () => {
     const { Logout } = this.props;
     Logout.logoutAction();
-    // document.getElementById('cart').style.display = 'none';
     document.getElementById('login').style.display = 'block';
     document.getElementById('logout').style.display = 'none';
   };

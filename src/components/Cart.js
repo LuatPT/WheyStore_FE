@@ -10,7 +10,7 @@ class Cart extends React.Component {
     document.getElementById('cartApp').style.display = 'none';
   };
   render() {
-    const { listCart, CartActionUpdate } = this.props;
+    const { listCart, CartUpdate } = this.props;
     let tongAll = 0;
     if (listCart.length > 0) {
       return (
@@ -56,7 +56,7 @@ class Cart extends React.Component {
                     {...ele}
                     key={key}
                     tongAll={tongAll}
-                    CartActionUpdate={CartActionUpdate}
+                    CartUpdate={CartUpdate}
                   />
                 );
               })}

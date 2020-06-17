@@ -17,7 +17,6 @@ class CartItem extends React.Component {
     this.setState({
       soluong: Number(this.state.soluong) - 1,
     });
-    console.log(this.state.soluong);
   };
   updateCart = (ele) => {
     const obj = {
@@ -26,8 +25,8 @@ class CartItem extends React.Component {
       product_id: ele.product_id,
       soluong: this.state.soluong,
     };
-    const { CartActionUpdate } = this.props;
-    CartActionUpdate.updateToCart(obj);
+    const { CartUpdate } = this.props;
+    CartUpdate.updateCartAction(obj);
   };
   render() {
     const ele = this.props;

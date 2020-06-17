@@ -10,14 +10,14 @@ class DetailProduct extends React.Component {
   //   const ele = this.props;
   //   DetailAction2.checkExistProduct({ productId: ele.product_id });
   // };
-  addOrUpdate = () => {
-    const { cart } = this.props;
-    if (cart) {
-      console.log(cart);
-    } else {
-      console.log('nguuu');
-    }
-  };
+  // addOrUpdate = () => {
+  //   const { cart } = this.props;
+  //   if (cart) {
+  //     console.log(cart);
+  //   } else {
+  //     console.log('nguuu');
+  //   }
+  // };
   addNewItem = () => {
     const ele = this.props;
     // console.log(ele);
@@ -30,27 +30,6 @@ class DetailProduct extends React.Component {
       soluong: this.soLuong.current.value,
     };
     DetailAction.checkExistProduct(item);
-    setTimeout(() => {
-      this.addOrUpdate();
-    }, 1000);
-    // this.addOrUpdate();
-    // if (!cart) {
-    //   console.log('111');
-    //   DetailAction.addToCart(item);
-    // } else {
-    //   console.log('222');
-    //   console.log(cart);
-    // }
-
-    // let soluongEnd = Number(this.soLuong.current.value) + Number(cart.soluong);
-    // console.log(soluongEnd);
-
-    // DetailAction3.updateToCart({
-    //   cart_id: cart.cart_id,
-    //   user_id: userId,
-    //   product_id: ele.product_id,
-    //   soLuong: soluongEnd,
-    // });
 
     closeDetail();
   };

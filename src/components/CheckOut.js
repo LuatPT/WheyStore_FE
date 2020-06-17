@@ -6,14 +6,19 @@ class CheckOut extends React.Component {
       email: '',
     };
   }
-  changeInput = (eve) => {
+  changeInput = (value) => {
+    console.log(value);
+
     this.setState({
-      email: eve.target.value,
+      email: value,
     });
   };
   closeDetail = () => {
-    const { sendMailActions } = this.props;
-    sendMailActions.sendMailAction(this.state.email);
+    const { sendMailActions, listCartToCheckOut } = this.props;
+    sendMailActions.sendMailAction({
+      email: this.state.email,
+      list: listCartToCheckOut,
+    });
     document.getElementById('divCheckOut').style.display = 'none';
   };
   render() {
@@ -89,7 +94,7 @@ class CheckOut extends React.Component {
           <div>
             <input
               type='text'
-              onChange={() => this.changeInput()}
+              onChange={(e) => this.changeInput(e.target.value)}
               placeholder='Nhập địa chỉ email của bạn để tiếp tục'
             />
           </div>
