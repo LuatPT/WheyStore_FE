@@ -28,6 +28,10 @@ class CartItem extends React.Component {
     const { CartUpdate } = this.props;
     CartUpdate.updateCartAction(obj);
   };
+  deleteCart = (ele) => {
+    const { CartDelete } = this.props;
+    CartDelete.deleteToCart(ele.cart_id);
+  };
   render() {
     const ele = this.props;
     return (
@@ -78,7 +82,7 @@ class CartItem extends React.Component {
               />
             </svg>
           </span>
-          <span className='btnDelete'>
+          <span className='btnDelete' onClick={() => this.deleteCart(ele)}>
             <svg
               className='bi bi-x-square'
               width='1.5em'

@@ -75,12 +75,7 @@ class DetailProduct extends React.Component {
               currency: 'VND',
             })}
           </p>
-          <p className='descDetail'>
-            Mutant Mass XXXtreme 2500 cung cấp năng lượng cao để đem lại hiệu
-            quả tăng cân tối ưu, hỗ trợ tăng cân tăng cơ vượt trội. Mutant Mass
-            XXXtreme 250 nhập khẩu chính hãng, cam kết chất lượng, giá rẻ nhất
-            tại Hà Nội và Tp.HCM.
-          </p>
+          <p className='descDetail'>{ele.product_note}</p>
           <p className='chooseTaste'>Chọn Hương Vị</p>
           <p>
             <span className='itemTaste'>Chocolate</span>

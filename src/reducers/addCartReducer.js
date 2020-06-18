@@ -4,6 +4,8 @@ const addCartReducer = (state = '', action) => {
       return action.message;
     case 'UPDATE_CART':
       return action.message;
+    case 'DELETE_CART':
+      return action.message;
     default:
       return state;
   }

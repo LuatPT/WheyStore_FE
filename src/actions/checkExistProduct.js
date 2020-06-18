@@ -15,6 +15,7 @@ export const checkExistProduct = (obj) => {
         dispatch(checkExist(res.data));
         if (!res.data) {
           add.addToCart(obj);
+          alert('Thêm thành công vào giỏ hàng!');
         } else {
           let objUpdate = {
             cart_id: res.data.cart_id,
@@ -23,6 +24,7 @@ export const checkExistProduct = (obj) => {
             soluong: Number(obj.soluong) + res.data.soluong,
           };
           update.updateToCart(objUpdate);
+          alert('Thêm thành công vào giỏ hàng!');
         }
       })
       .catch((err) => console.log(err));

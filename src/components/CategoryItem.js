@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 class CategoryItem extends React.Component {
   showLogin = () => {
     document.getElementById('loginForm').style.display = 'block';

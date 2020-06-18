@@ -1,21 +1,19 @@
 import axios from 'axios';
 import * as constants from '../constants/index';
-export const updateCartAction = (obj) => {
+export const deleteToCart = (cart_id) => {
   return (dispatch) => {
     axios
-      .put(constants.api + '/carts/' + obj.cart_id, obj, {
+      .delete(constants.api + '/carts/' + cart_id, {
         headers: { 'access-token': localStorage.getItem('token') },
       })
       .then((res) => {
-        dispatch(updateCart(res.data));
-        console.log(res.data);
-
+        dispatch(deleteCart(res.data));
         alert(res.data);
       })
       .catch((err) => console.log(err));
   };
 };
-const updateCart = (message) => ({
-  type: 'UPDATE_CARD',
+const deleteCart = (message) => ({
+  type: 'DELETE_CARD',
   message,
 });

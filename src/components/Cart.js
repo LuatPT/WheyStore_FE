@@ -2,6 +2,10 @@ import React from 'react';
 import CartItem from './CartItem';
 
 class Cart extends React.Component {
+  componentDidMount = () => {
+    const { CartAction } = this.props;
+    CartAction.getCartAction({ userId: localStorage.getItem('userId') });
+  };
   closeDetail = () => {
     document.getElementById('cartApp').style.display = 'none';
   };
@@ -10,7 +14,7 @@ class Cart extends React.Component {
     document.getElementById('cartApp').style.display = 'none';
   };
   render() {
-    const { listCart, CartUpdate } = this.props;
+    const { listCart, CartUpdate, CartDelete } = this.props;
     let tongAll = 0;
     if (listCart.length > 0) {
       return (
@@ -57,6 +61,7 @@ class Cart extends React.Component {
                     key={key}
                     tongAll={tongAll}
                     CartUpdate={CartUpdate}
+                    CartDelete={CartDelete}
                   />
                 );
               })}
