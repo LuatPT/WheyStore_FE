@@ -1,50 +1,37 @@
 import React from 'react';
-
 class DetailProduct extends React.Component {
   constructor(props) {
     super(props);
     this.soLuong = React.createRef();
   }
-  // componentDidUpdate = () => {
-  //   const { DetailAction2 } = this.props;
-  //   const ele = this.props;
-  //   DetailAction2.checkExistProduct({ productId: ele.product_id });
-  // };
-  // addOrUpdate = () => {
-  //   const { cart } = this.props;
-  //   if (cart) {
-  //     console.log(cart);
-  //   } else {
-  //     console.log('nguuu');
-  //   }
-  // };
-  addNewItem = () => {
-    const ele = this.props;
-    // console.log(ele);
-    const { DetailAction, add, cart, userId, closeDetail } = this.props;
-    // console.log(cart);
+  componentDidMount = () => {
+    const { getDetailById } = this.props;
+    getDetailById.getDetailProduct({ product_id: this.props.product_id })
 
+  };
+  addNewItem = () => {
+    const { product } = this.props;
+    const { DetailAction, add, cart, userId, closeDetail } = this.props;
     var item = {
       user_id: userId,
-      product_id: ele.product_id,
+      product_id: product.product_id,
       soluong: this.soLuong.current.value,
     };
     DetailAction.checkExistProduct(item);
-
-    closeDetail();
   };
   render() {
-    const ele = this.props;
-    const { show, closeDetail } = this.props;
-    const salePrice = (ele.product_price * (100 - ele.product_sale)) / 100;
+    const { product } = this.props;
+
+    const { closeDetail } = this.props;
+    const salePrice = (product.product_price * (100 - product.product_sale)) / 100;
     return (
-      <div className='divDetail' style={{ display: show ? 'flex' : 'none' }}>
+      <div className='divDetail' >
         <div className='leftDetail'>
-          <img src={ele.product_img} alt='ok' width='300px' height='300px' />
+          <img src={product.product_img} alt='ok' width='300px' height='300px' />
         </div>
         <div className='rightDetail'>
           <p className='detailName'>
-            {ele.product_name}
+            {product.product_name}
             <span className='dauX' onClick={() => closeDetail()}>
               <svg
                 className='bi bi-x-square'
@@ -75,7 +62,7 @@ class DetailProduct extends React.Component {
               currency: 'VND',
             })}
           </p>
-          <p className='descDetail'>{ele.product_note}</p>
+          <p className='descDetail'>{product.product_note}</p>
           <p className='chooseTaste'>Chọn Hương Vị</p>
           <p>
             <span className='itemTaste'>Chocolate</span>

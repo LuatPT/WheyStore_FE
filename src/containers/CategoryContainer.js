@@ -9,6 +9,7 @@ const mapStateToProps = (state) => ({
   listCate: state.listCateReducer,
   isDisplayCart: state.loginReducer.message,
   userId: localStorage.getItem('userId'),
+  role: localStorage.getItem('role'),
 });
 const mapDispatchToProp = (dispatch) => ({
   CartActionToCate: bindActionCreators(CartActionToCate, dispatch),

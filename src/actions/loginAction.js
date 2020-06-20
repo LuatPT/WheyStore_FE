@@ -17,6 +17,7 @@ export const loginAction = (user, pass) => {
         } else {
           localStorage.setItem('token', res.data.jwt);
           localStorage.setItem('userId', res.data.userId);
+          localStorage.setItem('role', res.data.role);
           dispatch(login(res.data));
         }
       })

@@ -9,10 +9,6 @@ class Cart extends React.Component {
   closeDetail = () => {
     document.getElementById('cartApp').style.display = 'none';
   };
-  showCheckOut = () => {
-    document.getElementById('divCheckOut').style.display = 'block';
-    document.getElementById('cartApp').style.display = 'none';
-  };
   render() {
     const { listCart, CartUpdate, CartDelete } = this.props;
     let tongAll = 0;
@@ -79,7 +75,9 @@ class Cart extends React.Component {
                   colSpan='1'
                   style={{ display: listCart.length > 0 ? 'flex' : 'none' }}
                 >
-                  <button onClick={this.showCheckOut}>Thanh Toán</button>
+                  <button>
+                    <a href='/checkout'>Thanh Toán</a>
+                  </button>
                 </td>
               </tr>
             </tfoot>

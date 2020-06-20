@@ -4,7 +4,8 @@ import { bindActionCreators } from 'redux';
 import ListProducts from '../components/ListProducts';
 
 const mapStateToProps = (state) => ({
-  listProduct: state.listProductReducer,
+  listProduct: state.listProductReducer.list,
+  total: state.listProductReducer.total,
   keyWord: state.searchReducer,
 });
 const mapDispatchToProp = (dispatch) => ({

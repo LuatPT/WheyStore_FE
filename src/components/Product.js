@@ -1,5 +1,6 @@
 import React from 'react';
 import DetailContainer from '../containers/DetailContainer';
+import { Route } from 'react-router-dom';
 class Product extends React.Component {
   constructor(props) {
     super(props);
@@ -16,6 +17,7 @@ class Product extends React.Component {
   render() {
     const ele = this.props;
     const salePrice = (ele.product_price * (100 - ele.product_sale)) / 100;
+    let url = '/detail/' + ele.product_id;
     return (
       <div className='card divProduct col-md-2'>
         <img
@@ -41,14 +43,9 @@ class Product extends React.Component {
             })}
           </p>
           <button className='btn btn-primary' onClick={() => this.showDetail()}>
-            See Profile
+            <a href={url}>See Profile</a>
           </button>
         </div>
-        <DetailContainer
-          {...ele}
-          show={this.state.show}
-          closeDetail={this.showDetail}
-        />
       </div>
     );
   }

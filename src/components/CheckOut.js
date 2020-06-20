@@ -6,6 +6,10 @@ class CheckOut extends React.Component {
       email: '',
     };
   }
+  componentDidMount = () => {
+    const { CartAction } = this.props;
+    CartAction.getCartAction({ userId: localStorage.getItem('userId') });
+  };
   changeInput = (value) => {
     console.log(value);
 

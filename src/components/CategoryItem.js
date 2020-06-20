@@ -14,10 +14,10 @@ class CategoryItem extends React.Component {
     const { CartActionToCate } = this.props;
 
     CartActionToCate.getCartAction({ userId: localStorage.getItem('userId') });
-    document.getElementById('cartApp').style.display = 'block';
   };
   render() {
-    const { listCate, getProductbyCategory } = this.props;
+    const { listCate, getProductbyCategory, role } = this.props;
+
     let userId = localStorage.getItem('userId');
     return (
       <ul className='nav nav-pills'>
@@ -43,12 +43,23 @@ class CategoryItem extends React.Component {
             Đăng ký/Đăng nhập
           </a>
         </li>
+        <li
+          className=' nav-item'
+          style={{
+            display: Number(role) !== 0 || role === null ? 'none' : 'block',
+          }}
+        >
+          <a className='nav-link itemCategory' href='/admin' id='admin'>
+            Admin
+          </a>
+        </li>
         <li className=' nav-item'>
           <a
             className='nav-link itemCategory cart'
             onClick={this.showCart}
             style={{ display: userId == null ? 'none' : 'block' }}
             id='cart'
+            href='/cart'
           >
             <span className='spanCart'>Giỏ hàng</span>
           </a>

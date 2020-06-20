@@ -1,7 +1,9 @@
-const listProductReducer = (state = [], action) => {
+var init = { list: [], total: 0 };
+const listProductReducer = (state = init, action) => {
   switch (action.type) {
     case 'GET_PRODUCT':
-      return action.listProduct;
+      console.log(action.productObj);
+      return action.productObj;
     default:
       return state;
   }
