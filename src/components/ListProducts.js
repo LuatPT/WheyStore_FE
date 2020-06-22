@@ -32,6 +32,11 @@ class ListProducts extends React.Component {
     );
     return (
       <div>
+        <div className='divListProducts row'>
+          {arr.map((ele, key) => (
+            <ProductsContainer {...ele} key={key} />
+          ))}
+        </div>
         <div className='divPagi'>
           <Pagination
             itemClass='page-item'
@@ -41,11 +46,6 @@ class ListProducts extends React.Component {
             totalItemsCount={total}
             onChange={this.handlePageChange}
           />
-        </div>
-        <div className='divListProducts row'>
-          {arr.map((ele, key) => (
-            <ProductsContainer {...ele} key={key} />
-          ))}
         </div>
       </div>
     );

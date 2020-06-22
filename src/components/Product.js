@@ -43,7 +43,7 @@ class Product extends React.Component {
             })}
           </p>
           <button className='btn btn-primary' onClick={() => this.showDetail()}>
-            <a href={url}>See Profile</a>
+            <a href={url} className="seeProfile">See Profile</a>
           </button>
         </div>
       </div>

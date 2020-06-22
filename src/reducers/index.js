@@ -9,6 +9,7 @@ import getListCart from './getListCart';
 import searchReducer from './searchReducer';
 import checkExist from './checkExist';
 import detailProduct from './detailProduct';
+import getRateByProduct from './getRateByProduct';
 export default combineReducers({
   cateReducer,
   productReducer,
@@ -19,5 +20,6 @@ export default combineReducers({
   getListCart,
   searchReducer,
   checkExist,
-  detailProduct
+  detailProduct,
+  getRateByProduct
 });

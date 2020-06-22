@@ -4,16 +4,18 @@ import * as DetailAction from '../actions/checkExistProduct';
 import * as getDetailById from '../actions/getDetailProduct';
 import * as add from '../actions/addToCart';
 import * as update from '../actions/updateToCart';
+import * as getRate from '../actions/getRateByProduct';
 import { bindActionCreators } from 'redux';
 const mapStateToProps = (state) => ({
   userId: localStorage.getItem('userId'),
   cart: state.checkExist,
-  product: state.detailProduct,
+  product: state.detailProduct
 });
 const mapDispatchToProp = (dispatch) => ({
   DetailAction: bindActionCreators(DetailAction, dispatch),
   add: bindActionCreators(add, dispatch),
   update: bindActionCreators(update, dispatch),
   getDetailById: bindActionCreators(getDetailById, dispatch),
+  getRate: bindActionCreators(getRate, dispatch)
 });
 export default connect(mapStateToProps, mapDispatchToProp)(DetailProduct);

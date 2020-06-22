@@ -105,15 +105,7 @@
 }
 .divDetail {
   padding: 5%;
-  color: black;
-  border: 1px gray solid;
-  position: absolute;
-  width: 1000px;
-  top: 10%;
-  left: 20%;
-  z-index: 5;
-  background-color: whitesmoke;
-  opacity: 0.85;
+  color: black
 }
 .chooseTaste,
 .chooseGift {
@@ -232,8 +224,47 @@
   justify-content: center;
   padding: 1%;
 }
+.dv-star-rating-star > i{
+  font-size: x-large;
+}
 body {
   font-family: Arial, Helvetica, sans-serif;
+}
+.seeProfile{
+  color: white;
+}
+.btn-primary :hover {
+  color: yellow;
+}
+/* Comment */
+.divAllRate{
+  padding-top: 2%;
+}
+.divRate{
+  margin-top: 5% ;
+  background-color: #d5f1e1;
+}
+.divRateItem{
+  padding: 2%;
+  /* border: 0.5px gray solid; */
+}
+.pUser{
+  font-weight: bolder;
+  padding: 0;
+  margin: 0;
+  color: #2f2d2d;
+}
+.pDate{
+  color: gray;
+  font-size: 13px;
+}
+.h3HR{
+  font-weight: 700;
+  color: #2b84b4;
+}
+.newComment{
+  border: 0.5px gray solid;
+  /* background-color: #d5f1e1; */
 }
 
 * {

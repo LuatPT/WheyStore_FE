@@ -17,7 +17,6 @@ class CategoryItem extends React.Component {
   };
   render() {
     const { listCate, getProductbyCategory, role } = this.props;
-
     let userId = localStorage.getItem('userId');
     return (
       <ul className='nav nav-pills'>
