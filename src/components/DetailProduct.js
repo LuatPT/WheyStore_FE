@@ -12,7 +12,7 @@ class DetailProduct extends React.Component {
   };
   addNewItem = () => {
     const { product } = this.props;
-    const { DetailAction, add, cart, userId } = this.props;
+    const { DetailAction, userId } = this.props;
     var item = {
       user_id: userId,
       product_id: product.product_id,
@@ -21,7 +21,7 @@ class DetailProduct extends React.Component {
     DetailAction.checkExistProduct(item);
   };
   render() {
-    const { product, listRate } = this.props;
+    const { product } = this.props;
     const salePrice = (product.product_price * (100 - product.product_sale)) / 100;
     return (
       <div>

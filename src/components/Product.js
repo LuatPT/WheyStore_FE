@@ -1,6 +1,4 @@
 import React from 'react';
-import DetailContainer from '../containers/DetailContainer';
-import { Route } from 'react-router-dom';
 class Product extends React.Component {
   constructor(props) {
     super(props);

@@ -266,6 +266,29 @@ body {
   border: 0.5px gray solid;
   /* background-color: #d5f1e1; */
 }
+/* Post */
+.divListNewPost{
+  margin: 5%;
+  border: 0.5px gray solid;
+}
+.divNewPost {
+  padding: 1%;
+  border: 0.5px red solid;
+}
+
+.h3New{
+  margin: 1%;
+  text-align: center;
+  font-weight: bold;
+  color: #4caf50;
+}
+.pDatePost{
+  margin: 1%;
+  color: gray;
+  font-size: small;
+  
+}
+
 
 * {
   box-sizing: border-box;
