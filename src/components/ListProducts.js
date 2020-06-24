@@ -13,7 +13,7 @@ class ListProducts extends React.Component {
     this.setState({ activePage: pageNumber });
     ListProductActions.getProductsAction({
       page: pageNumber,
-      per_page: 3,
+      per_page: 12,
     });
   };
 
@@ -21,17 +21,27 @@ class ListProducts extends React.Component {
     const { ListProductActions } = this.props;
     ListProductActions.getProductsAction({
       page: this.state.activePage,
-      per_page: 3,
+      per_page: 15,
     });
   };
   render() {
-    const { listProduct, keyWord, total } = this.props;
-    let arr = listProduct.filter(
-      (ele) =>
-        ele.product_name.toLowerCase().includes(keyWord.toLowerCase()) === true
-    );
+    const { listProduct, keyWord, total, listProByCate } = this.props;
+    let arr;
+    if (listProByCate.length > 0) {
+      arr = listProByCate.filter(
+        (ele) =>
+          ele.product_name.toLowerCase().includes(keyWord.toLowerCase()) === true
+      );
+    } else {
+      arr = listProduct.filter(
+        (ele) =>
+          ele.product_name.toLowerCase().includes(keyWord.toLowerCase()) === true
+      );
+    }
     return (
       <div>
+        <hr />
+        <h3 className="h3Sale">Flash Sale</h3>
         <div className='divListProducts row'>
           {arr.map((ele, key) => (
             <ProductsContainer {...ele} key={key} />
@@ -42,7 +52,7 @@ class ListProducts extends React.Component {
             itemClass='page-item'
             linkClass='page-link'
             activePage={this.state.activePage}
-            itemsCountPerPage={3}
+            itemsCountPerPage={15}
             totalItemsCount={total}
             onChange={this.handlePageChange}
           />

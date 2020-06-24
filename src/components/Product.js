@@ -1,4 +1,5 @@
 import React from 'react';
+import ShowStar from './ShowStar';
 class Product extends React.Component {
   constructor(props) {
     super(props);
@@ -6,7 +7,11 @@ class Product extends React.Component {
       show: false,
     };
   }
-
+  componentDidMount = () => {
+    const { getAvg } = this.props;
+    const ele = this.props;
+    getAvg.getAvgRate({ product_id: ele.product_id });
+  }
   showDetail = () => {
     this.setState({
       show: !this.state.show,
@@ -14,6 +19,13 @@ class Product extends React.Component {
   };
   render() {
     const ele = this.props;
+    const { avgRate } = this.props;
+    // let avgStar = 5;
+    // if (avgRate != null) {
+    //   avgStar = avgRate;
+    // }
+    // console.log(avgStar);
+
     const salePrice = (ele.product_price * (100 - ele.product_sale)) / 100;
     let url = '/detail/' + ele.product_id;
     return (
@@ -40,6 +52,9 @@ class Product extends React.Component {
               currency: 'VND',
             })}
           </p>
+          <div>
+            <ShowStar starCount={avgRate == null ? 5 : avgRate} />
+          </div>
           <button className='btn btn-primary' onClick={() => this.showDetail()}>
             <a href={url} className="seeProfile">See Profile</a>
           </button>

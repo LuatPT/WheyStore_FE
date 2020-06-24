@@ -3,7 +3,7 @@ import * as getNewPostAc from '../actions/getNewPostAction';
 import { bindActionCreators } from 'redux';
 import ListNewPost from '../components/ListNewPost';
 const mapStateToProps = (state) => ({
-  listPost: state.getNewPost,
+  listPost: state.getListPost,
 });
 const mapDispatchToProp = (dispatch) => ({
   getNewPostAc: bindActionCreators(getNewPostAc, dispatch)

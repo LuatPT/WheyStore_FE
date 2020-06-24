@@ -5,6 +5,7 @@ import ListProducts from '../components/ListProducts';
 
 const mapStateToProps = (state) => ({
   listProduct: state.listProductReducer.list,
+  listProByCate: state.productReducer,
   total: state.listProductReducer.total,
   keyWord: state.searchReducer,
 });

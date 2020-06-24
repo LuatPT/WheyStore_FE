@@ -2,12 +2,17 @@ import React from 'react';
 class Post extends React.Component {
   render() {
     const ele = this.props;
+    let url = '/post/' + ele.post_id;
     return (
       <div className="col-md-4 divNewPost">
-        <button className="btnNewPost">Read more...</button>
-        <p className="pDatePost">{ele.create_at}</p>
+        <h4 className="headerPost">{ele.header}</h4>
+        <div className="divThumbNail">
+          <img className="thumbnail" src={ele.thumb_nail} alt="thumbnail" />
+        </div>
+        <button className="btnNewPost btn btn-outline-info"><a href={url}>Read more...</a></button><br />
+        <p className="pDatePost">{ele.create_at}</p><br />
         <p>{ele.content}</p>
-      </div>
+      </div >
     );
   }
 }

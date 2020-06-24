@@ -12,6 +12,6 @@ export const getProductbyCate = (category_ids) => {
   };
 };
 const getList = (listProduct) => ({
-  type: 'GET_PRODUCT',
+  type: 'GET_PRODUCT_BY_CATE',
   listProduct,
 });

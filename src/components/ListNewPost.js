@@ -7,15 +7,16 @@ class ListNewPost extends React.Component {
   }
   render() {
     const { listPost } = this.props;
-    console.log(listPost);
     return (
       <div>
+        <hr />
         <h3 className="h3New">New Posts</h3>
         <div className="row divListNewPost">
           {listPost.map((ele) => (
             <Post  {...ele} />
           ))}
         </div>
+        <a href="/allpost">Xem tất cả</a>
       </div >
     );
   }
