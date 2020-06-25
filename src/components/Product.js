@@ -8,7 +8,7 @@ class Product extends React.Component {
     };
   }
   componentDidMount = () => {
-    const { getAvg } = this.props;
+    const { getAvg, avgRate } = this.props;
     const ele = this.props;
     getAvg.getAvgRate({ product_id: ele.product_id });
   }
@@ -20,11 +20,6 @@ class Product extends React.Component {
   render() {
     const ele = this.props;
     const { avgRate } = this.props;
-    // let avgStar = 5;
-    // if (avgRate != null) {
-    //   avgStar = avgRate;
-    // }
-    // console.log(avgStar);
 
     const salePrice = (ele.product_price * (100 - ele.product_sale)) / 100;
     let url = '/detail/' + ele.product_id;
@@ -53,7 +48,7 @@ class Product extends React.Component {
             })}
           </p>
           <div>
-            <ShowStar starCount={avgRate == null ? 5 : avgRate} />
+            <ShowStar starCount={avgRate == null || avgRate == 6 ? 5 : avgRate} />
           </div>
           <button className='btn btn-primary' onClick={() => this.showDetail()}>
             <a href={url} className="seeProfile">See Profile</a>

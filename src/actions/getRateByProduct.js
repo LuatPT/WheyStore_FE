@@ -1,7 +1,6 @@
 import axios from 'axios';
 import * as constants from '../constants/index';
 export const getRateByProduct = (obj) => {
-  console.log(obj.product_id + "ngusi");
 
   return (dispatch) => {
     axios

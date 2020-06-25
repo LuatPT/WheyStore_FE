@@ -171,9 +171,10 @@
   border: 2px #1e73be solid;
   display: none;
   position: absolute;
-  top: 12%;
+  top: 6%;
   left: 0px;
-  max-width: 500px;
+  max-width: 600px;
+  z-index: 5;
 }
 #divCheckOut {
   padding: 2%;

@@ -6,10 +6,15 @@ class LoginRegister extends React.Component {
     this.pass = React.createRef();
   }
 
-  handleSubmit = (eve) => {
-    eve.preventDefault();
+  registerAccount = () => {
+    const { register } = this.props;
+    register.registerAction(this.user.current.value, this.pass.current.value);
+    document.getElementById('loginForm').style.display = 'none';
+    document.getElementById('login').style.display = 'none';
+    document.getElementById('logout').style.display = 'block';
+  };
+  handleSubmit = () => {
     const { LoginAction } = this.props;
-    console.log(this.user.current.value);
     LoginAction.loginAction(this.user.current.value, this.pass.current.value);
     document.getElementById('loginForm').style.display = 'none';
     document.getElementById('login').style.display = 'none';
@@ -20,53 +25,27 @@ class LoginRegister extends React.Component {
       <div id='loginForm'>
         <div className='container'>
           <h2 style={{ textAlign: 'center' }}>Register or Login</h2>
-          <form action='/#' onSubmit={this.handleSubmit} method='post'>
-            <div className='row'>
-              <div className='vl'>
-                <span className='vl-innertext'>or</span>
-              </div>
-
-              <div className='col'>
-                <div className='hide-md-lg'>
-                  <p>Or sign in manually:</p>
-                </div>
-                <input
-                  type='text'
-                  name='uid'
-                  placeholder='Username'
-                  ref={this.user}
-                  required
-                />
-                <input
-                  type='password'
-                  name='pwd'
-                  placeholder='Password'
-                  ref={this.pass}
-                  required
-                />
-                <input type='submit' value='Login' />
+          <div className='row'>
+            <div className='col'>
+              <input type='text' name='uid' placeholder='Username' ref={this.user} required />
+              <input type='password' name='pwd' placeholder='Password' ref={this.pass} required />
+              <div className="row">
+                <button className="btn btn-success col-md-5" onClick={this.registerAccount} >Register</button>
+                <p className="col-md-2" style={{ textAlign: "center" }}></p>
+                <button className="btn btn-success btnLogin col-md-5" onClick={this.handleSubmit} >Login</button>
               </div>
             </div>
-          </form>
+          </div>
         </div>
-
         <div className='bottom-container'>
           <div className='row'>
             <div className='col'>
-              <a
-                href='google.com.vn'
-                style={{ color: 'white' }}
-                className='btn'
-              >
+              <a href='/#' style={{ color: 'white' }} className='btn'>
                 Điều khoản dịch vụ
               </a>
             </div>
             <div className='col'>
-              <a
-                href='google.com.vn'
-                style={{ color: 'white' }}
-                className='btn'
-              >
+              <a href='/#' style={{ color: 'white' }} className='btn'>
                 Forgot password?
               </a>
             </div>
