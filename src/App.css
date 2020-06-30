@@ -35,9 +35,7 @@
     transform: rotate(360deg);
   }
 }
-.spanCart {
-  color: #fff;
-}
+
 .cart :hover .spanCart {
   color: #808080;
 }
