@@ -11,7 +11,9 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+.navCommon{
+  background-color: #3f51b5;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -61,10 +63,16 @@
   overflow: hidden;
 }
 .divCategory {
-  padding: 0.5%;
+  padding: 1%;
   background-color: #3f51b5;
   display: flex;
   justify-content: center;
+}
+.divHeaderCommon {
+  padding: 1%;
+  background-color: #3f51b5;
+  display: flex;
+  justify-content: space-between;
 }
 .itemCategory:hover {
   color: gray;
