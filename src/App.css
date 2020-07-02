@@ -37,6 +37,16 @@
     transform: rotate(360deg);
   }
 }
+/* Admin  */
+/* Product */
+.noteProduct{
+  max-width:200px;
+  word-wrap:break-word;
+}
+.endSaleProduct{
+  max-width:100px;
+  word-wrap:break-word;
+}
 
 .cart :hover .spanCart {
   color: #808080;

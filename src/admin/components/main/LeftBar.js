@@ -2,7 +2,7 @@ import React from 'react';
 class LeftBar extends React.Component {
   render() {
     return (
-      <div className="col-md-3">
+      <div className="leftBar col-md-1">
         <ul className="nav nav-tabs flex-column" role="tablist">
           <li className="active">
             <a href="/admin/home" >Home</a>

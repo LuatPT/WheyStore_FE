@@ -12,8 +12,8 @@ class ListNewPost extends React.Component {
         <hr />
         <h3 className="h3New">New Posts</h3>
         <div className="row divListNewPost">
-          {listPost.map((ele) => (
-            <Post  {...ele} />
+          {listPost.map((ele, key) => (
+            <Post key={key}  {...ele} />
           ))}
         </div>
         <a href="/allpost">Xem tất cả</a>

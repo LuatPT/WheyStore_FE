@@ -1,22 +1,22 @@
 import React from 'react';
-import Adm_Header from './main/Adm_Header';
-import ProductManager from './admin_product/ProductManager';
+import AdmHeader from './main/AdmHeader';
 import UserManager from './admin_user/UserManager';
 import PostManager from './admin_post/PostManager';
 import CateManager from './admin_cate/CateManager';
 import DashBoard from './main/DashBoard';
 import LeftBar from './main/LeftBar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import ProductAdmContainer from '../container/product/ProductAdmContainer';
 
 class Admin extends React.Component {
   render() {
     return (
-      <div className='App'>
-        <Adm_Header />
+      <div className='AppAdmin'>
+        <AdmHeader />
         <div className="row">
           <LeftBar />
           <Router>
-            <div className="rightBar">
+            <div className="rightBar col-md-11">
               <Switch>
                 <Route path='/admin/post'>
                   <PostManager />
@@ -28,7 +28,10 @@ class Admin extends React.Component {
                   <UserManager />
                 </Route>
                 <Route path='/admin/product'>
-                  <ProductManager />
+                  <ProductAdmContainer />
+                </Route>
+                <Route path='/admin/product/new'>
+                  <ProductAdmContainer />
                 </Route>
                 <Route path='/admin'>
                   <DashBoard />

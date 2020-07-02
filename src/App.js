@@ -10,12 +10,6 @@ import AllPostContainer from './member/containers/post/AllPostContainer';
 import FullPostContainer from './member/containers/post/FullPostContainer';
 import HeaderCommon from './member/components/main/HeaderCommon';
 
-import ProductManager from './admin/components/admin_product/ProductManager';
-import UserManager from './admin/components/admin_user/UserManager';
-import PostManager from './admin/components/admin_post/PostManager';
-import CateManager from './admin/components/admin_cate/CateManager';
-import DashBoard from './admin/components/main/DashBoard';
-
 class App extends React.Component {
   render() {
     return (
@@ -56,21 +50,6 @@ class App extends React.Component {
             </Route>
             <Route path='/'>
               <Home />
-            </Route>
-            <Route path='/admin/post'>
-              <PostManager />
-            </Route>
-            <Route path='/admin/category'>
-              <CateManager />
-            </Route>
-            <Route path='/admin/user'>
-              <UserManager />
-            </Route>
-            <Route path='/admin/product'>
-              <ProductManager />
-            </Route>
-            <Route path='/admin/home'>
-              <DashBoard />
             </Route>
           </Switch>
         </div>
