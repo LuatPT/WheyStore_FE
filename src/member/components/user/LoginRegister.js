@@ -22,7 +22,7 @@ class LoginRegister extends React.Component {
   };
   render() {
     return (
-      <div id='loginForm'>
+      <div id='loginForm' className="hiddenForm">
         <div className='container'>
           <h2 style={{ textAlign: 'center' }}>Register or Login</h2>
           <div className='row'>

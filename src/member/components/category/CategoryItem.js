@@ -3,7 +3,11 @@ import ReactTooltip from 'react-tooltip';
 
 class CategoryItem extends React.Component {
   showLogin = () => {
-    document.getElementById('loginForm').style.display = 'block';
+    let loginFormMe = document.getElementById('loginForm');
+
+    // loginFormMe.remove('hiddenForm');
+    loginFormMe.className = 'showFormLogin';
+
   };
   logOut = () => {
     const { Logout } = this.props;

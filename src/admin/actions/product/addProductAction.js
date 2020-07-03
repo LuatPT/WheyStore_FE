@@ -1,6 +1,6 @@
 import axios from 'axios';
 import * as constants from '../../constants/index';
-export const addProductAdm = (obj) => {
+export const addProductAction = (obj) => {
   return (dispatch) => {
     axios
       .post(constants.api + '/products', obj,
