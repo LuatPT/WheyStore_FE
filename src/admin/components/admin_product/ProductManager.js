@@ -1,7 +1,7 @@
 import React from 'react'
 import Pagination from 'react-js-pagination';
-import AddProductAdm from '../../container/product/AddProductAdm'
-import UpdateProductAdm from '../../container/product/UpdateProductAdm';
+import AddProductAdm from '../../container/product/AddProductAdm';
+import ProductElementContainer from '../../container/product/ProductElementContainer';
 
 class ProductManager extends React.Component {
   constructor(props) {
@@ -49,7 +49,7 @@ class ProductManager extends React.Component {
             </thead>
             <tbody>
               {listProduct.map((ele, key) => (
-                <UpdateProductAdm {...ele} key={key} />
+                <ProductElementContainer {...ele} key={key} />
               ))}
               <AddProductAdm />
             </tbody>

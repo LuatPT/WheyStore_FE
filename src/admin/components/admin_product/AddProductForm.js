@@ -48,7 +48,7 @@ class AddProductForm extends React.Component {
           <input type="text" ref={this.product_sale} />
         </td>
         <td>
-          <input type="text" ref={this.product_endsale} />
+          <input type="date" ref={this.product_endsale} />
         </td>
         <td>
           <span className="btnAddPro" onClick={() => this.addProductNew()}>

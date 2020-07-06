@@ -7,6 +7,7 @@ import DashBoard from './main/DashBoard';
 import LeftBar from './main/LeftBar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import ProductAdmContainer from '../container/product/ProductAdmContainer';
+import UpdateProductAdm from '../container/product/UpdateProductAdm';
 
 class Admin extends React.Component {
   render() {
@@ -30,9 +31,10 @@ class Admin extends React.Component {
                 <Route path='/admin/product'>
                   <ProductAdmContainer />
                 </Route>
-                <Route path='/admin/product/new'>
-                  <ProductAdmContainer />
-                </Route>
+                <Route path='/admin/product/:product_id' render={props =>
+                  <UpdateProductAdm {...props.match.params} />
+                }
+                />
                 <Route path='/admin'>
                   <DashBoard />
                 </Route>
