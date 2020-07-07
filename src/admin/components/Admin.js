@@ -1,6 +1,5 @@
 import React from 'react';
 import AdmHeader from './main/AdmHeader';
-import UserManager from './admin_user/UserManager';
 import PostManager from './admin_post/PostManager';
 import CateManager from './admin_cate/CateManager';
 import DashBoard from './main/DashBoard';
@@ -8,6 +7,7 @@ import LeftBar from './main/LeftBar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import ProductAdmContainer from '../container/product/ProductAdmContainer';
 import UpdateProductAdm from '../container/product/UpdateProductAdm';
+import UserAdmContainer from '../container/user/UserAdmContainer';
 
 class Admin extends React.Component {
   render() {
@@ -26,12 +26,12 @@ class Admin extends React.Component {
                   <CateManager />
                 </Route>
                 <Route path='/admin/user'>
-                  <UserManager />
+                  <UserAdmContainer />
                 </Route>
                 <Route path='/admin/product'>
                   <ProductAdmContainer />
                 </Route>
-                <Route path='/admin/product/:product_id' render={props =>
+                <Route path='/admin/updateProduct/:product_id' render={props =>
                   <UpdateProductAdm {...props.match.params} />
                 }
                 />

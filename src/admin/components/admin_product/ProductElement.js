@@ -13,7 +13,7 @@ class ProductElement extends React.Component {
   render() {
     const { key } = this.props;
     const ele = this.props;
-    let url = '/admin/product/' + ele.product_id;
+    let url = '/admin/updateProduct/' + ele.product_id;
     return (
       <tr key={key}>
         <td>{ele.product_id}</td>

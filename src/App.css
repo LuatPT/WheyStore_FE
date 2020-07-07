@@ -54,6 +54,11 @@
   width: 50px;
   height: 50px;
 }
+.updateProductItem{
+  margin: 2%;
+}
+
+
 
 .cart :hover .spanCart {
   color: #808080;
