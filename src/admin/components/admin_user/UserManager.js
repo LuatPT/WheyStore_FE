@@ -1,4 +1,6 @@
 import React from 'react'
+import UserElementContainer from '../../container/user/UserElementContainer';
+import AddUserForm from './AddUserForm';
 
 class UserManager extends React.Component {
   componentDidMount = () => {
@@ -7,12 +9,25 @@ class UserManager extends React.Component {
   }
   render() {
     const { listUser } = this.props;
-    console.log(listUser);
-
     return (
       <div className="userManager row">
-        userManager
-      </div>
+        <table className="table table-bordered table-sm">
+          <thead>
+            <tr>
+              <th>User ID </th>
+              <th>User Name</th>
+              <th>Role</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {listUser.map((ele, key) =>
+              < UserElementContainer {...ele} key={ele.user_id} />
+            )}
+            <AddUserForm />
+          </tbody>
+        </table>
+      </div >
     );
   }
 }

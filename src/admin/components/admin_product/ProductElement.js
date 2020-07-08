@@ -1,9 +1,6 @@
 import React from 'react';
 import moment from 'moment';
 class ProductElement extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   deleteProduct = (ele) => {
     const { DeleteProduct } = this.props;
     DeleteProduct.deleteProductAction(

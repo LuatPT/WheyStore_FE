@@ -5,7 +5,10 @@ class LeftBar extends React.Component {
       <div className="leftBar col-md-1">
         <ul className="nav nav-tabs flex-column" role="tablist">
           <li className="active">
-            <a href="/admin/home" >Home</a>
+            <a href="/" >Home</a>
+          </li>
+          <li >
+            <a href="/admin" >DashBoard</a>
           </li>
           <li>
             <a href="/admin/user" >User</a>

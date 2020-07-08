@@ -1,13 +1,13 @@
 import React from 'react';
 import AdmHeader from './main/AdmHeader';
 import PostManager from './admin_post/PostManager';
-import CateManager from './admin_cate/CateManager';
 import DashBoard from './main/DashBoard';
 import LeftBar from './main/LeftBar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import ProductAdmContainer from '../container/product/ProductAdmContainer';
 import UpdateProductAdm from '../container/product/UpdateProductAdm';
 import UserAdmContainer from '../container/user/UserAdmContainer';
+import CateAdmContainer from '../container/category/CateAdmContainer';
 
 class Admin extends React.Component {
   render() {
@@ -23,7 +23,7 @@ class Admin extends React.Component {
                   <PostManager />
                 </Route>
                 <Route path='/admin/cate'>
-                  <CateManager />
+                  <CateAdmContainer />
                 </Route>
                 <Route path='/admin/user'>
                   <UserAdmContainer />

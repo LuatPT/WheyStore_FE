@@ -30,22 +30,22 @@ class AddProductForm extends React.Component {
         <td>
         </td>
         <td>
-          <input type="text" ref={this.product_name} />
+          <input type="text" ref={this.product_name} placeholder="Product Name..." />
         </td>
         <td>
-          <input type="text" ref={this.category_id} />
+          <input type="text" ref={this.category_id} placeholder="Category ID..." />
         </td>
         <td>
-          <input type="text" ref={this.product_img} />
+          <input type="text" ref={this.product_img} placeholder="Product Image..." />
         </td>
         <td>
-          <input type="text" ref={this.product_note} />
+          <input type="text" ref={this.product_note} placeholder="Product Note..." />
         </td>
         <td>
-          <input type="text" ref={this.product_price} />
+          <input type="text" ref={this.product_price} placeholder="Product price..." />
         </td>
         <td>
-          <input type="text" ref={this.product_sale} />
+          <input type="text" ref={this.product_sale} placeholder="Sale off..." />
         </td>
         <td>
           <input type="date" ref={this.product_endsale} />
