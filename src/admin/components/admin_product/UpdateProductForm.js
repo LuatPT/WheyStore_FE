@@ -1,18 +1,6 @@
 import React from 'react';
-import moment from 'moment';
-function formatDate(date) {
-  var d = new Date(date),
-    month = '' + (d.getMonth() + 1),
-    day = '' + d.getDate(),
-    year = d.getFullYear();
+import * as constants from "../../constants/index";
 
-  if (month.length < 2)
-    month = '0' + month;
-  if (day.length < 2)
-    day = '0' + day;
-
-  return [year, month, day].join('-');
-}
 class UpdateProductForm extends React.Component {
   constructor(props) {
     super(props);
@@ -38,7 +26,7 @@ class UpdateProductForm extends React.Component {
       product_note: this.product_note.current.value,
       product_price: Number(this.product_price.current.value),
       product_sale: Number(this.product_sale.current.value),
-      product_endsale: formatDate(this.product_endsale.current.value),
+      product_endsale: constants.formatDate(this.product_endsale.current.value),
     }
     UpdateProduct.updateProductAction(eleUpdate);
   }

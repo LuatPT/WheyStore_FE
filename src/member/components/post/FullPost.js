@@ -2,7 +2,7 @@ import React from 'react';
 class FullPost extends React.Component {
   componentDidMount = () => {
     const { getPostById } = this.props;
-    getPostById.getDetailPost({ post_id: this.props.post_id });
+    getPostById.getDetailPost(this.props.post_id);
   }
   render() {
     const { post } = this.props;

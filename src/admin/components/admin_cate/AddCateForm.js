@@ -19,7 +19,7 @@ class AddCateForm extends React.Component {
       category_name: this.state.categoryName,
       category_status: 0
     }
-    AddCate.addCateAction();
+    AddCate.addCateAction(obj);
   }
   render() {
     return (
@@ -32,7 +32,7 @@ class AddCateForm extends React.Component {
           <input type="text" placeholder="Category status..." />
         </td>
         <td>
-          <button className="btn btn-success col-md-4" onClick={() => this.addNewCate()}>Add</button>
+          <button className="btn btn-success col-md-6" onClick={() => this.addNewCate()}>Add</button>
         </td>
       </tr >
     );

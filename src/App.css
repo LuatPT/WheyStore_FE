@@ -61,8 +61,16 @@
 /* User Admin */
 .userManager{
 }
-
-
+/* Post Admin */
+.updatePostItem{
+  margin: 2%;
+}
+.rightPost{
+  min-width: 50rem;
+}
+.btnAddPost{
+  color: white;
+}
 
 .cart :hover .spanCart {
   color: #808080;

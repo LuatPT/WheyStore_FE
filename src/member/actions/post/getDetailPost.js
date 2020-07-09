@@ -1,9 +1,9 @@
 import axios from 'axios';
 import * as constants from '../../constants/index';
-export const getDetailPost = (obj) => {
+export const getDetailPost = (post_id) => {
   return (dispatch) => {
     axios
-      .get(constants.api + '/posts/' + obj.post_id)
+      .get(constants.api + '/posts/' + post_id)
       .then((res) => {
         dispatch(detailPost(res.data));
       })
