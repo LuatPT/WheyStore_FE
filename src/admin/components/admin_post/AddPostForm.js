@@ -11,8 +11,6 @@ class AddPostForm extends React.Component {
   }
   addPost = () => {
     const { AddPost } = this.props;
-    console.log(AddPost);
-
     let obj = {
       user_id: Number(localStorage.getItem('userId')),
       create_at: constants.formatDate(new Date()),

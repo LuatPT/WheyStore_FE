@@ -14,6 +14,8 @@ import getListPost from './post/getListPost';
 import detailPost from './post/detailPost';
 import getAvgRate from './rate/getAvgRate';
 import getListUser from './user/getListUser';
+import getListTrainer from './trainer/getListTrainer';
+import detailTrainer from './trainer/detailTrainer';
 export default combineReducers({
   cateReducer,
   productReducer,
@@ -29,5 +31,7 @@ export default combineReducers({
   getListPost,
   detailPost,
   getAvgRate,
-  getListUser
+  getListUser,
+  getListTrainer,
+  detailTrainer
 });

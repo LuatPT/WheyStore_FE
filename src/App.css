@@ -72,6 +72,14 @@
   color: white;
 }
 
+/* Trainer */
+.titleTrainer{
+  color: white;
+  font-weight: bolder;
+}
+.textTrainer{
+  font-weight: bolder;
+}
 .cart :hover .spanCart {
   color: #808080;
 }

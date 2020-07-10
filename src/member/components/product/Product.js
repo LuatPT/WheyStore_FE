@@ -22,7 +22,7 @@ class Product extends React.Component {
     const { avgRate } = this.props;
 
     const salePrice = (ele.product_price * (100 - ele.product_sale)) / 100;
-    let url = '/detail/' + ele.product_id;
+    let url = '/product/' + ele.product_id;
     return (
       <div className='card divProduct col-md-2'>
         <img
@@ -32,10 +32,8 @@ class Product extends React.Component {
         />
         <div className='card-body'>
           <p className='pProduct'>{ele.product_name}</p>
-          <p
-            className='pProduct'
-            style={{ textDecoration: 'line-through', color: 'gray' }}
-          >
+          <p className='pProduct'
+            style={{ textDecoration: 'line-through', color: 'gray' }}>
             {ele.product_price.toLocaleString('it-IT', {
               style: 'currency',
               currency: 'VND',

@@ -9,6 +9,8 @@ import DetailContainer from './member/containers/product/DetailContainer';
 import AllPostContainer from './member/containers/post/AllPostContainer';
 import FullPostContainer from './member/containers/post/FullPostContainer';
 import HeaderCommon from './member/components/main/HeaderCommon';
+import ListTrainerContainer from './member/containers/trainer/ListTrainerContainer';
+import DetailTrainerContainer from './member/containers/trainer/DetailTrainerContainer';
 
 class App extends React.Component {
   render() {
@@ -25,7 +27,7 @@ class App extends React.Component {
                 <CartContainer />
               </div>
             </Route>
-            <Route path='/detail/:product_id' render={props =>
+            <Route path='/product/:product_id' render={props =>
               <div>
                 <HeaderCommon />
                 <DetailContainer {...props.match.params} />
@@ -42,6 +44,18 @@ class App extends React.Component {
                 <AllPostContainer />
               </div>
             </Route>
+            <Route path='/alltrainer'>
+              <div>
+                <HeaderCommon />
+                <ListTrainerContainer />
+              </div>
+            </Route>
+            <Route path='/trainer/:trainer_id' render={props =>
+              <div>
+                <HeaderCommon />
+                <DetailTrainerContainer {...props.match.params} />
+              </div>
+            } />
             <Route path='/checkout'>
               <div>
                 <HeaderCommon />

@@ -7,8 +7,7 @@ class DetailProduct extends React.Component {
   }
   componentDidMount = () => {
     const { getDetailById } = this.props;
-    getDetailById.getDetailProduct({ product_id: this.props.product_id })
-
+    getDetailById.getDetailProduct(this.props.product_id)
   };
   addNewItem = () => {
     const { product } = this.props;
