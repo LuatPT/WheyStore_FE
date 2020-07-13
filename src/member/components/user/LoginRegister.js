@@ -27,11 +27,14 @@ class LoginRegister extends React.Component {
           <h2 style={{ textAlign: 'center' }}>Register or Login</h2>
           <div className='row'>
             <div className='col'>
-              <input type='text' name='uid' placeholder='Username' ref={this.user} required />
-              <input type='password' name='pwd' placeholder='Password' ref={this.pass} required />
+              <div className="row">
+                <input type='text' className="col-md-5" name='uid' placeholder='Username' ref={this.user} required />
+                <span className="col-md-1"></span>
+                <input type='password' className="col-md-5" name='pwd' placeholder='Password' ref={this.pass} required />
+              </div><br />
               <div className="row">
                 <button className="btn btn-success col-md-5" onClick={this.registerAccount} >Register</button>
-                <p className="col-md-2" style={{ textAlign: "center" }}></p>
+                <p className="col-md-1" style={{ textAlign: "center" }}></p>
                 <button className="btn btn-success btnLogin col-md-5" onClick={this.handleSubmit} >Login</button>
               </div>
             </div>

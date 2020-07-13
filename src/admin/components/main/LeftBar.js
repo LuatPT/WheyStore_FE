@@ -22,6 +22,9 @@ class LeftBar extends React.Component {
           <li >
             <a href="/admin/post">Post</a>
           </li>
+          <li >
+            <a href="/admin/trainer">Trainer</a>
+          </li>
         </ul>
 
       </div>

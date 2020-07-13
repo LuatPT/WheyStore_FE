@@ -80,6 +80,11 @@
 .textTrainer{
   font-weight: bolder;
 }
+.btnSeeTrainer{
+  cursor: pointer;
+}
+
+
 .cart :hover .spanCart {
   color: #808080;
 }

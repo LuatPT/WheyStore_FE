@@ -1,17 +1,17 @@
 import axios from 'axios';
 import * as constants from '../../constants/index';
-export const deleteCateAction = (trainer_id) => {
+export const deleteTrainerAction = (trainer_id) => {
   return (dispatch) => {
     axios
       .delete(constants.api + '/trainers/' + trainer_id)
       .then((res) => {
-        dispatch(deleteCate(res.data));
-        alert("Category have been deleted!")
+        dispatch(deleteTrainer(res.data));
+        alert("Trainer have been deleted!")
       })
       .catch((err) => console.log(err));
   };
 };
-const deleteCate = (message) => ({
-  type: 'DELETE_CATE',
+const deleteTrainer = (message) => ({
+  type: 'DELETE_TRAINER',
   message,
 });

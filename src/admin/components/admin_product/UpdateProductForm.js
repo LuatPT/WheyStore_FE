@@ -14,7 +14,7 @@ class UpdateProductForm extends React.Component {
   }
   componentDidMount = () => {
     const { ShowUpdateProduct } = this.props;
-    ShowUpdateProduct.showDetailProduct({ product_id: this.props.product_id });
+    ShowUpdateProduct.showDetailProduct(this.props.product_id);
   }
   updateProduct = (ele) => {
     const { UpdateProduct } = this.props;

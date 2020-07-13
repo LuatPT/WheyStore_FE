@@ -10,6 +10,8 @@ import UpdatePostAdm from '../container/post/UpdatePostAdm';
 import UserAdmContainer from '../container/user/UserAdmContainer';
 import CateAdmContainer from '../container/category/CateAdmContainer';
 import AddPostAdm from '../container/post/AddPostAdm';
+import TrainerAdmContainer from '../container/trainer/TrainerAdmContainer';
+import UpdateTrainerAdm from '../container/trainer/UpdateTrainerAdm';
 
 class Admin extends React.Component {
   render() {
@@ -42,6 +44,13 @@ class Admin extends React.Component {
                 </Route>
                 <Route path='/admin/updateProduct/:product_id' render={props =>
                   <UpdateProductAdm {...props.match.params} />
+                }
+                />
+                <Route path='/admin/trainer'>
+                  <TrainerAdmContainer />
+                </Route>
+                <Route path='/admin/updateTrainer/:trainer_id' render={props =>
+                  <UpdateTrainerAdm {...props.match.params} />
                 }
                 />
                 <Route path='/admin'>
