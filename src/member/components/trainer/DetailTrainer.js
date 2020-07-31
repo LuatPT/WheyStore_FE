@@ -11,9 +11,9 @@ class DetailTrainer extends React.Component {
       <div className="trainerElementDetail ">
         <div className="card img-fluid">
           <img className="card-img-top" src={trainer.trainer_avatar} alt="Card image" />
-          <div className="card-img-overlay">
-            <h4 className="card-title titleTrainer">{trainer.trainer_name}</h4>
-          </div>
+          <p>
+            {trainer.trainer_name}
+          </p>
           <p className="card-text textTrainer">{trainer.experience} years experience</p>
           <p className="card-text textTrainer">"{trainer.trainer_quote}"</p>
           <p className="card-text textTrainer" >{trainer.trainer_cost}</p>

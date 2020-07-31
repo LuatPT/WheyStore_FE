@@ -7,13 +7,17 @@ class FullPost extends React.Component {
   render() {
     const { post } = this.props;
     return (
-      <div className="divFullPost">
-        <h4 className="headerPostFull">{post.header}</h4>
-        <div className="divThumbNailFull">
-          <img className="thumbnailFull" src={post.thumb_nail} alt="thumbnail" width="400px" height="300px" />
+      <div className="divFullPost row">
+        <div className="leftPost col-md-6">
+          <h4 className="headerPostFull">{post.header}</h4>
+          <div className="divThumbNailFull">
+            <img className="thumbnailFull" src={post.thumb_nail} alt="thumbnail" width="400px" height="300px" />
+          </div>
+          <p className="pDatePostFull">{post.create_at}</p><br />
         </div>
-        <p className="pDatePostFull">{post.create_at}</p><br />
-        <p>{post.content}</p>
+        <div className="col-md-6">
+          <p>{post.content}</p>
+        </div>
       </div >
     );
   }
