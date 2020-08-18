@@ -6,7 +6,6 @@ class DetailTrainer extends React.Component {
   };
   render() {
     const { trainer } = this.props;
-    console.log(trainer);
     return (
       <div className="trainerElementDetail ">
         <div className="card img-fluid">
