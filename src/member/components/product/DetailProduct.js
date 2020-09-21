@@ -1,9 +1,14 @@
 import React from 'react';
 import RateContainer from '../../containers/rate/RateContainer';
+import * as constants from '../../constants/index';
 class DetailProduct extends React.Component {
   constructor(props) {
     super(props);
     this.soLuong = React.createRef();
+    this.state = {
+      taste: '',
+      gift: ''
+    }
   }
   componentDidMount = () => {
     const { getDetailById } = this.props;
@@ -16,6 +21,8 @@ class DetailProduct extends React.Component {
       user_id: userId,
       product_id: product.product_id,
       soluong: this.soLuong.current.value,
+      taste: this.state.taste,
+      gift: this.state.gift
     };
     DetailAction.checkExistProduct(item);
   };
@@ -41,17 +48,19 @@ class DetailProduct extends React.Component {
             <p className='descDetail'>{product.product_note}</p>
             <p className='chooseTaste'>Chọn Hương Vị</p>
             <p>
-              <span className='itemTaste'>Chocolate</span>
-              <span className='itemTaste'>Cookies Cream</span>
-              <span className='itemTaste'>Strawberry Banana</span>
-              <span className='itemTaste'>Vanilla</span>
+              {
+                constants.tasteList.map(ele =>
+                  <span className='itemTaste' onClick={() => this.setState({ taste: ele.text })}>{ele.text}</span>
+                )
+              }
             </p>
             <p className='chooseGift'>Chọn Quà Tặng</p>
             <p>
-              <span className='itemGift'>Dây Kéo Lưng</span>
-              <span className='itemGift'>Găng Tay</span>
-              <span className='itemGift'>Bình BPI </span>
-              <span className='itemGift'>Ko quà -100.000đ</span>
+              {
+                constants.giftList.map(ele =>
+                  <span className='itemGift' onClick={() => this.setState({ gift: ele.text })}>{ele.text}</span>
+                )
+              }
             </p>
             <input
               type='text'

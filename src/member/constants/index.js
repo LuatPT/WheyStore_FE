@@ -1,6 +1,42 @@
-// export const api = 'http://localhost:3002/api/v1';
-export const api = 'http://localhost:8080/api/v1';
+export const api = 'http://localhost:3002/api/v1';
+// export const api = 'http://localhost:8080/api/v1';
 export const host = 'http://localhost:3000';
+export const tasteList = [
+  {
+    value: 1,
+    text: 'Chocolate'
+  },
+  {
+    value: 2,
+    text: 'Cookies Cream'
+  },
+  {
+    value: 3,
+    text: 'Strawberry Banana'
+  },
+  {
+    value: 4,
+    text: 'Vanilla'
+  }
+];
+export const giftList = [
+  {
+    value: 1,
+    text: 'Dây Kéo Lưng'
+  },
+  {
+    value: 2,
+    text: 'Găng Tay'
+  },
+  {
+    value: 3,
+    text: 'Bình BPI'
+  },
+  {
+    value: 4,
+    text: 'Ko quà -100.000đ'
+  }
+];
 export const rateLevel = [
   {
     value: 1,

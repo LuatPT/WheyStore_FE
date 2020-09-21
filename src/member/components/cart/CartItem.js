@@ -40,6 +40,8 @@ class CartItem extends React.Component {
           <img src={ele.product_img} alt='ok' width='100px' height='100px' />
         </td>
         <td>{ele.product_name}</td>
+        <td>{ele.taste}</td>
+        <td>{ele.gift}</td>
         <td>
           <button
             className='btnMinus col-md-4'

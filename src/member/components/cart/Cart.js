@@ -43,6 +43,8 @@ class Cart extends React.Component {
               <tr>
                 <th>Sản phẩm</th>
                 <th>Tên Sản phẩm</th>
+                <th>Hương vị</th>
+                <th>Quà tặng</th>
                 <th>Số lượng</th>
                 <th>Tổng giá</th>
                 <th>Action</th>
@@ -67,9 +69,9 @@ class Cart extends React.Component {
                 <td colSpan='3'>
                   Tổng đơn hàng:
                   {tongAll.toLocaleString('it-IT', {
-                    style: 'currency',
-                    currency: 'VND',
-                  })}
+                  style: 'currency',
+                  currency: 'VND',
+                })}
                 </td>
                 <td
                   colSpan='1'
