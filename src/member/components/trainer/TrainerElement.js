@@ -17,7 +17,7 @@ class TrainerElement extends React.Component {
             style: 'currency',
             currency: 'VND',
           })}</p>
-          <a href={url} className="btnSeeTrainer"><button className="btn btn-primary">See Profile...</button></a>
+          <a href={url} className="btnSeeTrainer"><button className="btn btn-primary">See Profile</button></a>
         </div>
       </div>
     );
