@@ -11,13 +11,13 @@ class TrainerElement extends React.Component {
           <div className="card-img-overlay">
             <h4 className="card-title titleTrainer">{ele.trainer_name}</h4>
           </div>
-          <p className="card-text textTrainer">{ele.experience} years experience</p>
+          <p className="card-text textTrainer">With {ele.experience} years experience</p>
           <p className="card-text textTrainer">"{ele.trainer_quote}"</p>
           <p className="card-text textTrainer" >{ele.trainer_cost.toLocaleString('it-IT', {
             style: 'currency',
             currency: 'VND',
           })}</p>
-          <a href={url} className="btnSeeTrainer"><button className="btn btn-primary">See Profile</button></a>
+          <a href={url} className="btnSeeTrainer"><button className="btn btn-primary">See Profile...</button></a>
         </div>
       </div>
     );
