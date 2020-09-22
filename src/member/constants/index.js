@@ -4,37 +4,45 @@ export const host = 'http://localhost:3000';
 export const tasteList = [
   {
     value: 1,
-    text: 'Chocolate'
+    text: 'Chocolate',
+    id: 'taste1'
   },
   {
     value: 2,
-    text: 'Cookies Cream'
+    text: 'Cookies Cream',
+    id: 'taste2'
   },
   {
     value: 3,
-    text: 'Strawberry Banana'
+    text: 'Strawberry Banana',
+    id: 'taste3'
   },
   {
     value: 4,
-    text: 'Vanilla'
+    text: 'Vanilla',
+    id: 'taste4'
   }
 ];
 export const giftList = [
   {
     value: 1,
-    text: 'Dây Kéo Lưng'
+    text: 'Dây Kéo Lưng',
+    id: 'gift1'
   },
   {
     value: 2,
-    text: 'Găng Tay'
+    text: 'Găng Tay',
+    id: 'gift2'
   },
   {
     value: 3,
-    text: 'Bình BPI'
+    text: 'Bình BPI',
+    id: 'gift3'
   },
   {
-    value: 4,
-    text: 'Ko quà -100.000đ'
+    value: 0,
+    text: 'Ko quà -100.000đ',
+    id: 'gift0'
   }
 ];
 export const rateLevel = [

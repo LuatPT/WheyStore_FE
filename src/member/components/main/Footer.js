@@ -3,8 +3,8 @@ const Footer = () => {
   return (
     <div className="divFooter">
       <p>
-        Thông tin chủ sở hữu website Wheyshop.vn -
-        Địa chỉ: Số 336 Đường La Thành, Chợ Dừa, Đống Đa, Hà Nội |
+        Thông tin chủ sở hữu website Hulk Supplement -
+        Địa chỉ: Đà Nẵng |
         MST: 0108744318.
       </p>
     </div>

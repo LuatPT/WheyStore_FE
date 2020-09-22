@@ -12,8 +12,16 @@ class DetailProduct extends React.Component {
   }
   componentDidMount = () => {
     const { getDetailById } = this.props;
-    getDetailById.getDetailProduct(this.props.product_id)
+    getDetailById.getDetailProduct(this.props.product_id);
   };
+  chooseTaste = (ele) => {
+    this.setState({ taste: ele.text });
+    document.getElementById(ele.id).style.backgroundColor = "#6db33f";
+  }
+  chooseGift = (ele) => {
+    this.setState({ gift: ele.text });
+    document.getElementById(ele.id).style.backgroundColor = "#6db33f";
+  }
   addNewItem = () => {
     const { product } = this.props;
     const { DetailAction, userId } = this.props;
@@ -50,7 +58,7 @@ class DetailProduct extends React.Component {
             <p>
               {
                 constants.tasteList.map(ele =>
-                  <span className='itemTaste' onClick={() => this.setState({ taste: ele.text })}>{ele.text}</span>
+                  <span className='itemTaste' onClick={() => this.chooseTaste(ele)} id={ele.id}>{ele.text}</span>
                 )
               }
             </p>
@@ -58,7 +66,7 @@ class DetailProduct extends React.Component {
             <p>
               {
                 constants.giftList.map(ele =>
-                  <span className='itemGift' onClick={() => this.setState({ gift: ele.text })}>{ele.text}</span>
+                  <span className='itemGift' onClick={() => this.chooseGift(ele)} id={ele.id}>{ele.text}</span>
                 )
               }
             </p>

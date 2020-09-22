@@ -560,3 +560,11 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+.carousel-indicators li.btnBanner{
+  width: 20px;
+  height: 20px;
+  display: block;
+  background-color: #6a6a6a;
+  border-radius: 50%;
+}

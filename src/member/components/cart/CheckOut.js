@@ -101,6 +101,13 @@ class CheckOut extends React.Component {
               onChange={(e) => this.changeInput(e.target.value)}
               placeholder='Nhập địa chỉ email của bạn để tiếp tục'
             />
+          </div><br />
+          <div>
+            <input
+              type='text'
+              placeholder='Nhập voucher giảm giá'
+            />
+            <button>Check voucher</button>
           </div>
           <div>
             <p>
