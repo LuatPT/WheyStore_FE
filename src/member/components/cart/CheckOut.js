@@ -1,9 +1,11 @@
 import React from 'react';
+import Payment from './Payment';
 class CheckOut extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       email: '',
+      voucher: ''
     };
   }
   componentDidMount = () => {
@@ -17,6 +19,16 @@ class CheckOut extends React.Component {
       email: value,
     });
   };
+  changeInputVoucher = (code) => {
+    this.setState({
+      voucher: code,
+    });
+  }
+  checkVoucher = () => {
+    const { checkVoucherActions } = this.props;
+
+    checkVoucherActions.checkVoucherAction({ voucher_code: this.state.voucher });
+  }
   closeDetail = () => {
     const { sendMailActions, listCartToCheckOut } = this.props;
     sendMailActions.sendMailAction({
@@ -26,7 +38,7 @@ class CheckOut extends React.Component {
     document.getElementById('divCheckOut').style.display = 'none';
   };
   render() {
-    const { listCartToCheckOut } = this.props;
+    const { listCartToCheckOut, resultCheckVoucher } = this.props;
     let tongAll = 0;
     if (listCartToCheckOut.length > 0) {
       return (
@@ -105,9 +117,14 @@ class CheckOut extends React.Component {
           <div>
             <input
               type='text'
+              onChange={(e) => this.changeInputVoucher(e.target.value)}
               placeholder='Nhập voucher giảm giá'
             />
-            <button>Check voucher</button>
+            <button onClick={() => this.checkVoucher()}>Check voucher</button>
+          </div>
+          <div>
+            <p>"Message: {resultCheckVoucher.voucher_percent ? 'Chúc mừng bạn đã nhận được giảm giá ' + resultCheckVoucher.voucher_percent + '% !' : 'Mã số không hợp lệ !'}"</p>
+            <Payment tongAll={tongAll} discount={resultCheckVoucher.voucher_percent} />
           </div>
           <div>
             <p>

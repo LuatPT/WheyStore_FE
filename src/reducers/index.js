@@ -16,6 +16,7 @@ import getAvgRate from './rate/getAvgRate';
 import getListUser from './user/getListUser';
 import getListTrainer from './trainer/getListTrainer';
 import detailTrainer from './trainer/detailTrainer';
+import checkVoucher from './voucher/checkVoucher';
 export default combineReducers({
   cateReducer,
   productReducer,
@@ -33,5 +34,6 @@ export default combineReducers({
   getAvgRate,
   getListUser,
   getListTrainer,
-  detailTrainer
+  detailTrainer,
+  checkVoucher
 });
