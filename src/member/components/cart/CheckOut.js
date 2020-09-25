@@ -5,7 +5,8 @@ class CheckOut extends React.Component {
     super(props);
     this.state = {
       email: '',
-      voucher: ''
+      voucher: '',
+      totalAll: 1
     };
   }
   componentDidMount = () => {
@@ -29,16 +30,19 @@ class CheckOut extends React.Component {
 
     checkVoucherActions.checkVoucherAction({ voucher_code: this.state.voucher });
   }
-  closeDetail = () => {
+  closeDetail = (value) => {
     const { sendMailActions, listCartToCheckOut } = this.props;
     sendMailActions.sendMailAction({
       email: this.state.email,
       list: listCartToCheckOut,
+      tongAll: value
     });
     document.getElementById('divCheckOut').style.display = 'none';
+    alert('Email đã được gửi. Vui lòng kiểm tra');
   };
   render() {
     const { listCartToCheckOut, resultCheckVoucher } = this.props;
+    let discount = resultCheckVoucher.voucher_percent !== undefined ? resultCheckVoucher.voucher_percent : 100;
     let tongAll = 0;
     if (listCartToCheckOut.length > 0) {
       return (
@@ -124,7 +128,7 @@ class CheckOut extends React.Component {
           </div>
           <div>
             <p>"Message: {resultCheckVoucher.voucher_percent ? 'Chúc mừng bạn đã nhận được giảm giá ' + resultCheckVoucher.voucher_percent + '% !' : 'Mã số không hợp lệ !'}"</p>
-            <Payment tongAll={tongAll} discount={resultCheckVoucher.voucher_percent} />
+            <Payment tongAll={tongAll} discount={discount} />
           </div>
           <div>
             <p>
@@ -163,9 +167,9 @@ class CheckOut extends React.Component {
               </tbody>
             </table>
           </div>
-          <button onClick={this.closeDetail}>Chấp nhận  .
-          <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cursor-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103z" />
+          <button onClick={() => this.closeDetail(tongAll - tongAll * discount / 100)}>Chấp nhận  .
+          <svg width="1em" height="1em" viewBox="0 0 16 16" className="bi bi-cursor-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fillRule="evenodd" d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103z" />
             </svg>
           </button>
         </div>
