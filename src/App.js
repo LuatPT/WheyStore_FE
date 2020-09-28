@@ -11,6 +11,7 @@ import FullPostContainer from './member/containers/post/FullPostContainer';
 import HeaderCommon from './member/components/main/HeaderCommon';
 import ListTrainerContainer from './member/containers/trainer/ListTrainerContainer';
 import DetailTrainerContainer from './member/containers/trainer/DetailTrainerContainer';
+import Game from './member/components/game/Game';
 
 class App extends React.Component {
   render() {
@@ -61,6 +62,9 @@ class App extends React.Component {
                 <HeaderCommon />
                 <CheckOutContainer />
               </div>
+            </Route>
+            <Route path='/game'>
+              <Game />
             </Route>
             <Route path='/'>
               <Home />

@@ -1,4 +1,3 @@
-import { render } from '@testing-library/react'
 import React from 'react'
 class Payment extends React.Component {
   render() {

@@ -568,3 +568,12 @@ input:checked + .slider:before {
   background-color: #6a6a6a;
   border-radius: 50%;
 }
+
+.divGame{
+  display: flex;
+}
+.divBox{
+  width: 160px;
+  height: 160px;
+  border: 1px black solid;
+}
