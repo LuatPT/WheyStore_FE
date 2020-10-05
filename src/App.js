@@ -12,6 +12,7 @@ import HeaderCommon from './member/components/main/HeaderCommon';
 import ListTrainerContainer from './member/containers/trainer/ListTrainerContainer';
 import DetailTrainerContainer from './member/containers/trainer/DetailTrainerContainer';
 import Game from './member/components/game/Game';
+import GameContainer from './member/containers/voucher/GameContainer';
 
 class App extends React.Component {
   render() {
@@ -64,7 +65,7 @@ class App extends React.Component {
               </div>
             </Route>
             <Route path='/game'>
-              <Game />
+              <GameContainer />
             </Route>
             <Route path='/'>
               <Home />

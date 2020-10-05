@@ -17,6 +17,7 @@ import getListUser from './user/getListUser';
 import getListTrainer from './trainer/getListTrainer';
 import detailTrainer from './trainer/detailTrainer';
 import checkVoucher from './voucher/checkVoucher';
+import listVoucher from './voucher/listVoucher';
 export default combineReducers({
   cateReducer,
   productReducer,
@@ -35,5 +36,6 @@ export default combineReducers({
   getListUser,
   getListTrainer,
   detailTrainer,
-  checkVoucher
+  checkVoucher,
+  listVoucher
 });

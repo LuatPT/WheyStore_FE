@@ -572,8 +572,16 @@ input:checked + .slider:before {
 .divGame{
   display: flex;
 }
-.divBox{
-  width: 160px;
-  height: 160px;
-  border: 1px black solid;
+.giftSpan {
+  background-color: rgb(230,230,230);
+  display: inline-block;
+  padding: 20px;
+  width: 200px;
+  height: 100px;
+  margin: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+.giftSpan:hover {
+   background-color: rgb(200,200,230);
 }
