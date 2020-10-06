@@ -1,4 +1,5 @@
 import React from 'react'
+import HeaderCommon from '../main/HeaderCommon';
 import Box from './Box'
 class Game extends React.Component {
 
@@ -11,7 +12,7 @@ class Game extends React.Component {
   }
 
   resetGame = () => {
-    let answer = Math.floor(Math.random() * 8);
+    let answer = Math.floor(Math.random() * 10);
     let guess = false;
     this.setState({ answer, guess });
   }
@@ -29,9 +30,9 @@ class Game extends React.Component {
     let winner = "";
     if (listVoucher.length > 0) {
       voucher = Math.floor(Math.random() * listVoucher.length);
-      winner = 'You get voucher 💰:' + listVoucher[voucher].voucher_code;
+      winner = 'Voucher💰:' + listVoucher[voucher].voucher_code;
     }
-    let cards_arr = ["Gift", "Gift", "Gift", "Gift", "Gift", "Gift", "Gift", "Gift"];
+    let cards_arr = ["Gift", "Gift", "Gift", "Gift", "Gift", "Gift", "Gift", "Gift", "Gift", "Gift"];
     //set winner
     let cards = cards_arr.map((x, i) => {
       if (this.state.guess === i && this.state.answer === i) {
@@ -39,13 +40,15 @@ class Game extends React.Component {
       } else if (this.state.guess === i) {
         return <Box key={i} result="You are not winner 😡" />;
       } else {
+        // return <Box key={i} result="You are not winner 😡" />;
         return <span className="giftSpan" key={i} onClick={() => this.chooseGift(i)}>{x}</span>;
       }
     });
     return (
-      <div className="divGame">
+      <div >
+        <HeaderCommon />
         {cards}
-        <div >
+        <div className="divGame">
           <button onClick={() => this.resetGame()}>Reset</button>
         </div>
       </div>
