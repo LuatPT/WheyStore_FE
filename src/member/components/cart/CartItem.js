@@ -7,26 +7,36 @@ class CartItem extends React.Component {
       soluong: ele.soluong,
     };
   }
-  addSoLuong = () => {
-    this.setState({
+  addSoLuong = async() => {
+    await this.setState({
       soluong: Number(this.state.soluong) + 1,
     });
-    console.log(this.state.soluong);
+    const ele = this.props;
+    this.updateCart(ele);
   };
-  minusSoLuong = () => {
-    this.setState({
+  minusSoLuong = async() => {
+    await this.setState({
       soluong: Number(this.state.soluong) - 1,
     });
+    const ele = this.props;
+    this.updateCart(ele);
   };
-  updateCart = (ele) => {
+  updateCart = (element) => {
     const obj = {
-      cart_id: ele.cart_id,
-      user_id: ele.user_id,
-      product_id: ele.product_id,
+      cart_id: element.cart_id,
+      user_id: element.user_id,
+      product_id: element.product_id,
       soluong: this.state.soluong,
     };
+
+    const ele = this.props;
+    if(this.state.soluong === 0){
+      this.deleteCart(ele)
+    }else{
     const { CartUpdate } = this.props;
     CartUpdate.updateCartAction(obj);
+    }
+    
   };
   deleteCart = (ele) => {
     const { CartDelete } = this.props;

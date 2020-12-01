@@ -9,7 +9,7 @@ class Post extends React.Component {
         <div className="divThumbNail">
           <img className="thumbnail" src={ele.thumb_nail} alt="thumbnail" />
         </div>
-        <button className="btnNewPost btn btn-outline-info"><a href={url}>Read more...</a></button><br />
+        <a className="btnNewPost btn btn-info" href={url}>Read more...</a><br />
         <p className="pDatePost">{ele.create_at}</p><br />
         <p>{ele.content}</p>
       </div >

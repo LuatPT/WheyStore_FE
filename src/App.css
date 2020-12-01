@@ -585,3 +585,31 @@ input:checked + .slider:before {
 .giftSpan:hover {
    background-color: rgb(200,200,230);
 }
+
+.radioCustom1, .radioCustom2{
+  display: inline-block;
+}
+
+.radioHiddenTaste , .radioHiddenGift{
+  display: none;
+}
+
+.itemTaste , .itemGift{
+  padding: 5px;
+  border-radius: 5px;
+  border:1px solid black;
+}
+
+.radioHiddenTaste:checked + .itemTaste{
+  border:1px solid #86c038;
+  background: #86c038;
+  color: white;
+  transition: all 0.5s;
+}
+
+.radioHiddenGift:checked + .itemGift{
+  border:1px solid #86c038;
+  background: #86c038;
+  color: white;
+  transition: all 0.5s;
+}

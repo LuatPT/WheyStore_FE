@@ -33,7 +33,7 @@ class UpdatePostForm extends React.Component {
     return (
       <div className="updatePostForm row">
         <div className="leftPost col-md-3">
-          <img src={post.thumb_nail} alt="Loading..." width="100%" height="100%" />
+          <img src={post.thumb_nail} alt="Loading..." width="300px" height="300px" />
         </div>
         <div className="rightPost cold-md-9">
           <div className="inline-flex row updatePostItem">

@@ -48,9 +48,7 @@ class Product extends React.Component {
           <div>
             <ShowStar starCount={avgRate == null || avgRate === 6 ? 5 : avgRate} />
           </div>
-          <button className='btn btn-primary' onClick={() => this.showDetail()}>
-            <a href={url} className="seeProfile">See Profile</a>
-          </button>
+          <a href={url} className="btn btn-primary seeProfile" onClick={() => this.showDetail()}>See Profile</a>
         </div>
       </div>
     );

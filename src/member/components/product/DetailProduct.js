@@ -6,8 +6,8 @@ class DetailProduct extends React.Component {
     super(props);
     this.soLuong = React.createRef();
     this.state = {
-      taste: '',
-      gift: ''
+      taste: 'Chocolate',
+      gift: 'Bình BPI'
     }
   }
   componentDidMount = () => {
@@ -16,11 +16,9 @@ class DetailProduct extends React.Component {
   };
   chooseTaste = (ele) => {
     this.setState({ taste: ele.text });
-    document.getElementById(ele.id).style.backgroundColor = "#6db33f";
   }
   chooseGift = (ele) => {
     this.setState({ gift: ele.text });
-    document.getElementById(ele.id).style.backgroundColor = "#6db33f";
   }
   addNewItem = () => {
     const { product } = this.props;
@@ -55,30 +53,34 @@ class DetailProduct extends React.Component {
             </p>
             <p className='descDetail'>{product.product_note}</p>
             <p className='chooseTaste'>Chọn Hương Vị</p>
-            <p>
               {
-                constants.tasteList.map(ele =>
-                  <span className='itemTaste' onClick={() => this.chooseTaste(ele)} id={ele.id}>{ele.text}</span>
+                constants.tasteList.map((ele, idx) =>
+                  <div className="radioCustom1"> 
+                    <input type="radio"  id ={ele.id} className="radioHiddenTaste" name="taste" value={ele.text} defaultChecked={idx=== 0 ? true : false}/>
+                    <label className='itemTaste' htmlFor={ele.id} onClick={() => this.chooseTaste(ele)} >{ele.text}</label>
+                  </div>
+                  
                 )
               }
-            </p>
             <p className='chooseGift'>Chọn Quà Tặng</p>
-            <p>
               {
-                constants.giftList.map(ele =>
-                  <span className='itemGift' onClick={() => this.chooseGift(ele)} id={ele.id}>{ele.text}</span>
+                constants.giftList.map((ele, idx) =>
+                  <div className="radioCustom2">
+                    <input type="radio"  id ={ele.id} className="radioHiddenGift" name="gift" value={ele.text} defaultChecked={idx=== 0 ? true : false}/>
+                    <label className='itemGift' htmlFor={ele.id} onClick={() => this.chooseGift(ele)} >{ele.text}</label>
+                  </div>
                 )
               }
-            </p>
+               <br/>
             <input
-              type='text'
+              type='number'
               className='inputCount'
-              placeholder='Nhập số lượng...'
               ref={this.soLuong}
             />
+           
             <button className='addCart' onClick={this.addNewItem}>
               Thêm vào giỏ
-          </button>
+            </button>
           </div>
         </div>
         <div className="rate">

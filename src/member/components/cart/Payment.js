@@ -8,7 +8,7 @@ class Payment extends React.Component {
         <p>Số tiền phải thanh toán: {total.toLocaleString('it-IT', {
           style: 'currency',
           currency: 'VND',
-        })}{' '} đ</p>
+        })}{' '}</p>
       </div>
     )
   }

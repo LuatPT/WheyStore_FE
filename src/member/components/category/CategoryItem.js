@@ -17,7 +17,6 @@ class CategoryItem extends React.Component {
   };
   showCart = () => {
     const { CartActionToCate } = this.props;
-
     CartActionToCate.getCartAction({ userId: localStorage.getItem('userId') });
   };
   render() {
@@ -25,6 +24,28 @@ class CategoryItem extends React.Component {
     let userId = localStorage.getItem('userId');
     return (
       <ul className='nav nav-pills'>
+         <li
+            className=' nav-item'
+          >
+            <a className='nav-link itemCategory' href='#'>
+              <span>Trang chủ</span>
+            </a>
+          </li>
+          <li
+            className=' nav-item'
+          >
+            <a className='nav-link itemCategory' href='/alltrainer'>
+              <span>Đăng ký khóa học</span>
+            </a>
+          </li>
+          <li
+            className=' nav-item'
+          >
+            <a className='nav-link itemCategory' href='/allpost'>
+              <span>Giáo Án Tăng Cơ Giảm Mỡ</span>
+            </a>
+          </li>
+          
         {listCate.map((ele, key) => (
           <li
             className=' nav-item'

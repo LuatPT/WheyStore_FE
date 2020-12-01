@@ -53,8 +53,8 @@ class Rate extends React.Component {
           </div>
           <div className="newComment">
             <Star starCount={this.state.starCount} chooseStar={this.chooseStar} />
-            <input name="comment" placeholder="Nhập đánh giá của bạn tại đây" onChange={this.typeComment} />
-            <input type="file" name="image" />
+            <textarea name="comment" id="textAreaRate" placeholder="Nhập đánh giá của bạn tại đây" data-provide="markdown-editable" rows="10" onChange={this.typeComment}/>
+            {/* <input type="file" name="image" /> */}
             <button onClick={() => this.addNewComment()} >Thêm</button>
           </div>
         </div >
