@@ -22,7 +22,7 @@ class UpdateProductForm extends React.Component {
       product_id: ele.product_id,
       product_name: this.product_name.current.value,
       category_id: Number(this.category_id.current.value),
-      product_img: ele.product_img,
+      product_img:  this.product_img.current.value,
       product_note: this.product_note.current.value,
       product_price: Number(this.product_price.current.value),
       product_sale: Number(this.product_sale.current.value),
