@@ -21,7 +21,7 @@ const Banner = () => {
               <img className="d-block w-100" src="https://www.wheystore.vn/upload/banner/upl_banner_1606895573_image_1606895573.jpg" alt="Third slide" />
             </div>
             <div className="carousel-item">
-              <img className="d-block w-100" src="https://www.wheystore.vn/upload/banner/upl_banner_1606360258_image_1606360258.jpg" alt="Fourth slide" />
+              <img className="d-block w-100" src={require('./../../../img/ok.png')} alt="Fourth slide" />
             </div>
           </div>
           <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
