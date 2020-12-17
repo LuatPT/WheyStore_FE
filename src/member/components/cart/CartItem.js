@@ -22,14 +22,18 @@ class CartItem extends React.Component {
     this.updateCart(ele);
   };
   updateCart = (element) => {
+    const ele = this.props;
     const obj = {
       cart_id: element.cart_id,
       user_id: element.user_id,
       product_id: element.product_id,
       soluong: this.state.soluong,
+      taste: element.taste,
+      gift: element.gift
+      
     };
 
-    const ele = this.props;
+    
     if(this.state.soluong === 0){
       this.deleteCart(ele)
     }else{
@@ -44,6 +48,7 @@ class CartItem extends React.Component {
   };
   render() {
     const ele = this.props;
+    
     return (
       <tr>
         <td>
