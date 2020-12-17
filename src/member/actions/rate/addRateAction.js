@@ -2,14 +2,15 @@ import axios from 'axios';
 import * as constants from '../../constants/index';
 
 export const addRateAction = (obj) => {
-  console.log(obj);
-  return (dispatch) => {
+  return (dispatch, getState) => {
     axios
       .post(constants.api + '/rates/', obj, {
         headers: { 'access-token': localStorage.getItem('token') },
       })
       .then((res) => {
-        dispatch(addRate(res.data));
+        const { getRateByProduct } = getState();
+        getRateByProduct.push(obj);
+        dispatch(getRate([...getRateByProduct]));
         alert(res.data);
       })
       .catch((err) => console.log(err));
@@ -18,4 +19,8 @@ export const addRateAction = (obj) => {
 const addRate = (message) => ({
   type: 'ADD_RATE',
   message,
+});
+const getRate = (listRate) => ({
+  type: 'GET_RATE',
+  listRate,
 });

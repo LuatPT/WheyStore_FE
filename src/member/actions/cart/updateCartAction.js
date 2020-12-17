@@ -8,7 +8,6 @@ export const updateCartAction = (obj) => {
       })
       .then((res) => {
         const { getListCart } = getState();
-        console.log(getListCart);
         let listCartUpdated = getListCart.map((ele) => ele.cart_id === obj.cart_id ? {...ele, soluong: obj.soluong, tong: (ele.tong / ele.soluong)*obj.soluong} : ele );
         dispatch(getCart([...listCartUpdated]));
       })

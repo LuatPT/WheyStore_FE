@@ -6,8 +6,6 @@ export const getRateByProduct = (obj) => {
     axios
       .get(constants.api + '/rate/' + obj.product_id)
       .then((res) => {
-        console.log(res.data);
-
         dispatch(getRate(res.data));
       })
       .catch((err) => console.log(err));

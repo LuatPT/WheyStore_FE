@@ -56,7 +56,7 @@ class DetailProduct extends React.Component {
               {
                 constants.tasteList.map((ele, idx) =>
                   <div className="radioCustom1"> 
-                    <input type="radio"  id ={ele.id} className="radioHiddenTaste" name="taste" value={ele.text} defaultChecked={idx=== 0 ? true : false}/>
+                    <input type="radio" id ={ele.id} className="radioHiddenTaste" name="taste" value={ele.text} defaultChecked={idx=== 0 ? true : false}/>
                     <label className='itemTaste' htmlFor={ele.id} onClick={() => this.chooseTaste(ele)} >{ele.text}</label>
                   </div>
                   

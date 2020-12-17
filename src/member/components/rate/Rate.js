@@ -29,7 +29,6 @@ class Rate extends React.Component {
       comment: this.state.comment,
       image: null
     };
-    console.log(obj);
     addRate.addRateAction(obj);
   }
   render() {
